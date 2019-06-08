@@ -47,6 +47,18 @@ if(isset($_POST['register_button'])) {
   $password2  = strip_tags($_POST['reg_password2']);    //strip tags function removes all html tags to prevent injections
 
   $date = date("Y-m-d");  //sets signup date to proper date format
+
+  if($em == $em2) {
+    //check if email is in valid format
+    if (filter_var($em, FILER_VALIDATE_EMAIL))  {
+          $em = filter_var($em, FILER_VALIDATE_EMAIL);
+    } else  {
+      echo"your email format is wrong duder...";
+    }
+
+  }   else  {
+    echo"Emails dont match, try again buddy";
+  }
  
 
 
@@ -72,14 +84,14 @@ if(isset($_POST['register_button'])) {
   </head>
   <body>
         <form action="register.php" method="POST">
-            <input type="text" name="reg_fname" placeholder="First Name" required></form>
-            <input type="text" name="reg_lname" placeholder="Last Name" required></form>
+            <input type="text" name="reg_fname" placeholder="First Name" required>
+            <input type="text" name="reg_lname" placeholder="Last Name" required>
             <br>
-            <input type="email" name="reg_email" placeholder="E-mail" required></form>
-            <input type="email" name="reg_email2" placeholder="Confirm E-mail" required></form>
+            <input type="email" name="reg_email" placeholder="E-mail" required>
+            <input type="email" name="reg_email2" placeholder="Confirm E-mail" required>
             <br>
-            <input type="password" name="reg_password" placeholder="Password" required></form>
-            <input type="password" name="reg_password2" placeholder="Confirm Password" required></form>
+            <input type="password" name="reg_password" placeholder="Password" required>
+            <input type="password" name="reg_password2" placeholder="Confirm Password" required>
             <br>
             <input type="submit" name="register_button" value="Register">
         </form>
