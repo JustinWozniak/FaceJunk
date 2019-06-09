@@ -1,52 +1,56 @@
-<?php
+<?php  
+//session storgae to save letters typed into form
+session_start();
+$con = mysqli_connect("localhost", "root", "", "social"); //Connection variable
 
-$con = mysqli_connect("localhost", "root", "", "social");
-if (mysqli_connect_errno()) {
-  echo "Failed to connect" . mysqli_connect_errno();
+if(mysqli_connect_errno()) 
+{
+	echo "Failed to connect: " . mysqli_connect_errno();
 }
 
-//variables to prevent errors
-$fname = "";  //fiisrtname
-$lname = "";   //lastname
-$em = "";     //email
-$em2 = "";     //email2
+//Declaring variables to prevent errors
+$fname = ""; //First name
+$lname = ""; //Last name
+$em = ""; //email
+$em2 = ""; //email 2
 $password = ""; //password
-$password2 = ""; //password2
-$date = "";     //sign up date
-$error_array = array();    //error messages
+$password2 = ""; //password 2
+$date = ""; //Sign up date 
+$error_array = array(); //Holds error messages
 
-if (isset($_POST['register_button'])) {
+if(isset($_POST['register_button'])){
 
-  //register form values
+	//Registration form values
 
+	//First name
+	$fname = strip_tags($_POST['reg_fname']); //Remove html tags
+	$fname = str_replace(' ', '', $fname); //remove spaces
+	$fname = ucfirst(strtolower($fname)); //Uppercase first letter
+	$_SESSION['reg_fname'] = $fname; //Stores first name into session variable
 
-  //first name...
-  $fname  = strip_tags($_POST['reg_fname']);    //strip tags function removes all html tags to prevent injections
-  $fname = str_replace(' ', '', $fname);    //str replace function removes first argument and replaces them with second argument. 
-  $fname = ucfirst(strtolower($fname)); //lowers all letters in the string, and then capitalizes only the first letter
+	//Last name
+	$lname = strip_tags($_POST['reg_lname']); //Remove html tags
+	$lname = str_replace(' ', '', $lname); //remove spaces
+	$lname = ucfirst(strtolower($lname)); //Uppercase first letter
+	$_SESSION['reg_lname'] = $lname; //Stores last name into session variable
 
-  //last name...
-  $lname  = strip_tags($_POST['reg_lname']);    //strip tags function removes all html tags to prevent injections
-  $lname = str_replace(' ', '', $lname);    //str replace function removes first argument and replaces them with second argument. 
-  $lname = ucfirst(strtolower($lname)); //lowers all letters in the string, and then capitalizes only the first letter
+	//email
+	$em = strip_tags($_POST['reg_email']); //Remove html tags
+	$em = str_replace(' ', '', $em); //remove spaces
+	$em = ucfirst(strtolower($em)); //Uppercase first letter
+	$_SESSION['reg_email'] = $em; //Stores email into session variable
 
+	//email 2
+	$em2 = strip_tags($_POST['reg_email2']); //Remove html tags
+	$em2 = str_replace(' ', '', $em2); //remove spaces
+	$em2 = ucfirst(strtolower($em2)); //Uppercase first letter
+	$_SESSION['reg_email2'] = $em2; //Stores email2 into session variable
 
-  //Email...
-  $em  = strip_tags($_POST['reg_email']);    //strip tags function removes all html tags to prevent injections
-  $em = str_replace(' ', '', $em);    //str replace function removes first argument and replaces them with second argument. 
-  $em = ucfirst(strtolower($em)); //lowers all letters in the string, and then capitalizes only the first letter
+	//Password
+	$password = strip_tags($_POST['reg_password']); //Remove html tags
+	$password2 = strip_tags($_POST['reg_password2']); //Remove html tags
 
-
-  //Email2...
-  $em2  = strip_tags($_POST['reg_email2']);    //strip tags function removes all html tags to prevent injections
-  $em2 = str_replace(' ', '', $em2);    //str replace function removes first argument and replaces them with second argument. 
-  $em2 = ucfirst(strtolower($em2)); //lowers all letters in the string, and then capitalizes only the first letter
-
-  //password...
-  $password  = strip_tags($_POST['reg_password']);    //strip tags function removes all html tags to prevent injections
-  $password2  = strip_tags($_POST['reg_password2']);    //strip tags function removes all html tags to prevent injections
-
-  $date = date("Y-m-d");  //sets signup date to proper date format
+	$date = date("Y-m-d"); //Current date
 
 	if($em == $em2) {
 		//Check if email is in valid format 
@@ -59,49 +63,146 @@ if (isset($_POST['register_button'])) {
 
 			//Count the number of rows returned
 			$num_rows = mysqli_num_rows($e_check);
-      if ($num_rows > 0) {
-        echo "That emails already in use man!";
-      }
-    } else {
-      echo "your email format is wrong duder...";
-    }
-  } else {
-    echo "Emails dont match, try again bud...";
-  }
+
+			if($num_rows > 0) {
+				array_push($error_array, "That e-mail address is already in use duder!~<br>");
+			}
+
+		}
+		else {
+			array_push($error_array, "Invalid email format man!~<br>");
+		}
+
+
+	}
+	else {
+		array_push($error_array, "Your emails don't match...duh!<br>");
+	}
+
+
+	if(strlen($fname) > 25 || strlen($fname) < 2) {
+		array_push($error_array, "Your first name must be between 2 and 25 characters<br>");
+	}
+
+	if(strlen($lname) > 25 || strlen($lname) < 2) {
+		array_push($error_array,  "Your last name must be between 2 and 25 characters<br>");
+	}
+
+	if($password != $password2) {
+		array_push($error_array,  "Your passwords do not match....TRY AGAIN....<br>");
+	}
+	else {
+		if(preg_match('/[^A-Za-z0-9]/', $password)) {
+			array_push($error_array, "Your password can only contain english characters or numbers....cmon man!<br>");
+		}
+	}
+
+	if(strlen($password > 30 || strlen($password) < 5)) {
+		array_push($error_array, "Your password must be betwen 5 and 30 characters<br>");
+	}
+
+
+	if(empty($error_array)) {
+		$password = md5($password); //Encrypt password before sending to database
+
+		//Generate username by concatenating first name and last name
+		$username = strtolower($fname . "_" . $lname);
+		$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
+
+
+		$i = 0; 
+		//if username exists add number to username
+		while(mysqli_num_rows($check_username_query) != 0) {
+			$i++; //Add 1 to i
+			$username = $username . "_" . $i;
+			$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
+		}
+
+		//Profile picture assignment
+		$rand = rand(1, 2); //Random number between 1 and 2
+
+		if($rand == 1)
+			$profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+		else if($rand == 2)
+			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
+
+
+		$query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')");
+
+		array_push($error_array, "<span style='color: #14C800;'>You're all set! Goahead and login!</span><br>");
+
+		//Clear session variables 
+		$_SESSION['reg_fname'] = "";
+		$_SESSION['reg_lname'] = "";
+		$_SESSION['reg_email'] = "";
+		$_SESSION['reg_email2'] = "";
+	}
+
 }
-
-
-
 
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>FaceJunk - Register</title>
-  <meta name="description" content="" />
+	<title>Welcome to FaceJunk!!!!~</title>
 </head>
-
 <body>
-  <form action="register.php" method="POST">
-    <input type="text" name="reg_fname" placeholder="First Name" required>
-    <input type="text" name="reg_lname" placeholder="Last Name" required>
-    <br>
-    <input type="email" name="reg_email" placeholder="E-mail" required>
-    <input type="email" name="reg_email2" placeholder="Confirm E-mail" required>
-    <br>
-    <input type="password" name="reg_password" placeholder="Password" required>
-    <input type="password" name="reg_password2" placeholder="Confirm Password" required>
-    <br>
-    <input type="submit" name="register_button" value="Register">
-  </form>
+
+	<form action="register.php" method="POST">
+		<input type="text" name="reg_fname" placeholder="First Name" value="<?php 
+		if(isset($_SESSION['reg_fname'])) {
+			echo $_SESSION['reg_fname'];
+		} 
+		?>" required>
+		<br>
+		<?php if(in_array("Your first name must be between 2 and 25 characters<br>", $error_array)) echo "Your first name must be between 2 and 25 characters<br>"; ?>
+		
+		
+
+
+		<input type="text" name="reg_lname" placeholder="Last Name" value="<?php 
+		if(isset($_SESSION['reg_lname'])) {
+			echo $_SESSION['reg_lname'];
+		} 
+		?>" required>
+		<br>
+		<?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "Your last name must be between 2 and 25 characters<br>"; ?>
+
+		<input type="email" name="reg_email" placeholder="Email" value="<?php 
+		if(isset($_SESSION['reg_email'])) {
+			echo $_SESSION['reg_email'];
+		} 
+		?>" required>
+		<br>
+
+		<input type="email" name="reg_email2" placeholder="Confirm Email" value="<?php 
+		if(isset($_SESSION['reg_email2'])) {
+			echo $_SESSION['reg_email2'];
+		} 
+		?>" required>
+		<br>
+		<?php if(in_array("Email already in use...NICE TRY!<br>", $error_array)) echo "Email already in use....NICE TRY!<br>"; 
+		else if(in_array("Invalid email format....try again man!<br>", $error_array)) echo "Invalid email format try again man!<br>";
+		else if(in_array("Emails don't match....whoops!~<br>", $error_array)) echo "Emails don't match whoops!~<br>"; ?>
+
+
+		<input type="password" name="reg_password" placeholder="Password" required>
+		<br>
+		<input type="password" name="reg_password2" placeholder="Confirm Password" required>
+		<br>
+		<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Your passwords do not match...try again...<br>"; 
+		else if(in_array("Your password can only contain english characters or numbers...What do you think this is???<br>", $error_array)) echo "Your password can only contain english characters or numbers....What do you think this is???<br>";
+		else if(in_array("Your password must be betwen 5 and 30 characters<br>", $error_array)) echo "Your password must be betwen 5 and 30 characters<br>"; ?>
+
+
+		<input type="submit" name="register_button" value="Register">
+		<br>
+
+		<?php if(in_array("<span style='color: #14C800;'>HOLY COW!!<br>You're all set! Go ahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>"; ?>
+
+	</form>
 
 
 </body>
-
 </html>
