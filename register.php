@@ -13,9 +13,9 @@ require "includes/form_handlers/register_handler.php"
 <body>
 
 <form action="register.php" method="POST"> 
-  <input type="email" name="Log_email" placeholder="Email Address" >
+  <input type="email" name="log_email" placeholder="Email Address" >
   <br>
-  <input type="password" name="Log_password" placeholder="Password" >
+  <input type="password" name="log_password" placeholder="Password" >
   <br>
   <input type="submit" name="login_button" value="Login">
 </form>
