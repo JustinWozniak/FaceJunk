@@ -10,10 +10,11 @@ require 'includes/form_handlers/login_handler.php';
 	<title>Welcome to FaceJunk!</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
 	<script src="wallpaper.js"></script>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
 
-	<form action="register.php" method="POST">
+	<form action="register.php" method="POST" >
 		<input type="email" name="log_email" placeholder="Email Address" value="<?php 
 		if(isset($_SESSION['log_email'])) {
 			echo $_SESSION['log_email'];
