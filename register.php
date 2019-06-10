@@ -12,6 +12,15 @@ require "includes/form_handlers/register_handler.php"
 
 <body>
 
+<form action="register.php" method="POST"> 
+  <input type="email" name="Log_email" placeholder="Email Address" >
+  <br>
+  <input type="password" name="Log_password" placeholder="Password" >
+  <br>
+  <input type="submit" name="login_button" value="Login">
+</form>
+
+
   <form action="register.php" method="POST">
     <input type="text" name="reg_fname" placeholder="First Name" value="<?php
     if (isset($_SESSION['reg_fname'])) {
