@@ -1,4 +1,6 @@
 <?php
+
+
 //Declaring variables to prevent errors
 $fname = ""; //First name
 $lname = ""; //Last name
@@ -98,6 +100,7 @@ if(isset($_POST['register_button'])){
 
 		//Generate username by concatenating first name and last name
 		$username = strtolower($fname . "_" . $lname);
+		$emailAddressUsedToSendTo = $em;
 		$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
 
 
@@ -136,9 +139,8 @@ if(isset($_POST['register_button'])){
     echo ($secret_signup_key);
 
 
-
     $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',', $secret_signup_key)");
-
+	include("includes/email/register_email.php");
 		array_push($error_array, "<span style='color: #14C800;'>You're all set! Goahead and login!</span><br>");
 
 		//Clear session variables 
@@ -146,6 +148,7 @@ if(isset($_POST['register_button'])){
 		$_SESSION['reg_lname'] = "";
 		$_SESSION['reg_email'] = "";
 		$_SESSION['reg_email2'] = "";
+
 	}
 
 }
