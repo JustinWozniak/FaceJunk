@@ -3,6 +3,15 @@ form    {
     width:100%;
 }
 
+a{
+  text-decoration: none;
+  color: rgb(255, 8, 222);
+  font-size: 40px;
+  font-family: cursive;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
 
 input[type=text], select, textarea {
     margin: 5px;
@@ -11,6 +20,16 @@ input[type=text], select, textarea {
     border-radius: 4px;
     resize: vertical;
   }
+
+  
+
+input[type=text]:hover, select, textarea {
+  margin: 5px;
+  padding: 12px;
+  border: 5px solid rgb(28, 138, 6);
+  border-radius: 4px;
+  resize: vertical;
+}
   input[type=email], select, textarea {
     margin: 5px;
     padding: 12px;
@@ -19,10 +38,26 @@ input[type=text], select, textarea {
     resize: vertical;
   }
   
+  input[type=email]:hover, select, textarea {
+    margin: 5px;
+  padding: 12px;
+  border: 5px solid rgb(28, 138, 6);
+  border-radius: 4px;
+  resize: vertical;
+  }
+  
   input[type=password], select, textarea {
     margin: 5px;
     padding: 12px;
     border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type=password]:hover, select, textarea {
+    margin: 5px;
+    padding: 12px;
+    border: 5px solid rgb(28, 138, 6);
     border-radius: 4px;
     resize: vertical;
   }
@@ -44,7 +79,12 @@ input[type=text], select, textarea {
   }
   
   input[type=submit]:hover {
-    background-color: rgb(145, 9, 9);
+    background-color: rgb(201, 167, 16);
+    color: white;
+    padding: 30px 35px;
+    border: solid;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
   .container {
@@ -74,6 +114,7 @@ input[type=text], select, textarea {
 
   .logo1  {
     width:100%;
+    border-radius: 10%;
   }
 
   .registerForm   {
@@ -82,6 +123,7 @@ input[type=text], select, textarea {
   margin:10px;
   padding:10px;
   width:95%;
+  border-radius: 30%;
   }
 
   .signupForm {
@@ -90,6 +132,11 @@ input[type=text], select, textarea {
     margin:10px;
     padding:10px;
     width:95%;
+    border-radius: 30%;
+  }
+
+  #second {
+    display: none;
   }
   @media only screen and (max-width: 600px) {
     .registerForm  {

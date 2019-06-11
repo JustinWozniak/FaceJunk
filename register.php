@@ -4,16 +4,18 @@ require 'includes/form_handlers/register_handler.php';
 require 'includes/form_handlers/login_handler.php';
 ?>
 
-
 <html class="mainview">
 <head>
 	<title>Welcome to FaceJunk!</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
-	<script src="wallpaper.js"></script>
+	<script src="./assets/js/wallpaper.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="./assets/js/register.js"></script>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
 <img src="./assets/images/logos/facejunk logo.jpg" class="logo1">
+<div id="first">
 	<form action="register.php" method="POST" class="registerForm">
 		<input type="email" name="log_email" placeholder="Email Address" value="<?php 
 		if(isset($_SESSION['log_email'])) {
@@ -26,9 +28,10 @@ require 'includes/form_handlers/login_handler.php';
 		<?php if(in_array("Email or password was incorrect<br>", $error_array)) echo  "Email or password was incorrect<br>"; ?>
 		<input type="submit" name="login_button" value="Login">
 		<br>
-
+		<a href="#" id="signup" class="signup">Need an account? Register here!</a>
 	</form>
-
+</div>
+<div id="second">
 	<form action="register.php" method="POST" class="signupForm">
 		<input type="text" name="reg_fname" placeholder="First Name" value="<?php 
 		if(isset($_SESSION['reg_fname'])) {
@@ -80,9 +83,9 @@ require 'includes/form_handlers/login_handler.php';
 		<br>
 
 		<?php if(in_array("<span style='color: #14C800;'>You're all set! Goahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>"; ?>
-
+		<a href="#" id="signin" class="signin">Already have an account? Sign in here!</a>
 	</form>
-
+</div>
 
 </body>
 </html>
