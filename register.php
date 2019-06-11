@@ -13,8 +13,8 @@ require 'includes/form_handlers/login_handler.php';
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
-
-	<form action="register.php" method="POST" >
+<img src="./assets/images/logos/facejunk logo.jpg" class="logo1">
+	<form action="register.php" method="POST" class="registerForm">
 		<input type="email" name="log_email" placeholder="Email Address" value="<?php 
 		if(isset($_SESSION['log_email'])) {
 			echo $_SESSION['log_email'];
@@ -29,7 +29,7 @@ require 'includes/form_handlers/login_handler.php';
 
 	</form>
 
-	<form action="register.php" method="POST">
+	<form action="register.php" method="POST" class="signupForm">
 		<input type="text" name="reg_fname" placeholder="First Name" value="<?php 
 		if(isset($_SESSION['reg_fname'])) {
 			echo $_SESSION['reg_fname'];
