@@ -23,13 +23,7 @@ input[type=text], select, textarea {
 
   
 
-input[type=text]:hover, select, textarea {
-  margin: 5px;
-  padding: 12px;
-  border: 5px solid rgb(28, 138, 6);
-  border-radius: 4px;
-  resize: vertical;
-}
+
   input[type=email], select, textarea {
     margin: 5px;
     padding: 12px;
@@ -38,13 +32,7 @@ input[type=text]:hover, select, textarea {
     resize: vertical;
   }
   
-  input[type=email]:hover, select, textarea {
-    margin: 5px;
-  padding: 12px;
-  border: 5px solid rgb(28, 138, 6);
-  border-radius: 4px;
-  resize: vertical;
-  }
+
   
   input[type=password], select, textarea {
     margin: 5px;
@@ -54,13 +42,7 @@ input[type=text]:hover, select, textarea {
     resize: vertical;
   }
 
-  input[type=password]:hover, select, textarea {
-    margin: 5px;
-    padding: 12px;
-    border: 5px solid rgb(28, 138, 6);
-    border-radius: 4px;
-    resize: vertical;
-  }
+
 
 
   label {
@@ -78,14 +60,7 @@ input[type=text]:hover, select, textarea {
  
   }
   
-  input[type=submit]:hover {
-    background-color: rgb(201, 167, 16);
-    color: white;
-    padding: 30px 35px;
-    border: solid;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+
   
   .container {
     border-radius: 5px;
@@ -93,17 +68,6 @@ input[type=text]:hover, select, textarea {
     padding: 20px;
   }
   
-  .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-  }
-  
-  .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-  }
   
   /* Clear floats after the columns */
   .row:after {
@@ -124,6 +88,10 @@ input[type=text]:hover, select, textarea {
   padding:10px;
   width:95%;
   border-radius: 30%;
+  color: rgb(230, 106, 5);
+  font-size: 50px;
+ 
+
   }
 
   .signupForm {
@@ -133,11 +101,18 @@ input[type=text]:hover, select, textarea {
     padding:10px;
     width:95%;
     border-radius: 30%;
+    font-size: 50px;
+    color: rgb(230, 106, 5);
   }
 
   #second {
     display: none;
   }
+
+.errorDiv {
+  color: white;
+}
+
   @media only screen and (max-width: 600px) {
     .registerForm  {
       display: block;
