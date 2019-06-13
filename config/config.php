@@ -1,6 +1,6 @@
 <?php
 ob_start(); //Turns on output buffering 
-// session_start();
+session_start();
 
 $timezone = date_default_timezone_set("America/Toronto");
 
