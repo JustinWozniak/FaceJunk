@@ -1,7 +1,7 @@
 <?php
 //-------------------THE FOLLOWING IS EMAIL SENT WHEN YOU SIGN UP
 // require 'register_handler.php';
-require 'config/config.php';
+// require 'config/config.php';
 
 
 $email = mysqli_query($con, "SELECT * FROM users WHERE email='$em'");
@@ -48,3 +48,21 @@ require 'C:\xampp\composer\vendor\autoload.php';
 	}
 	
 	?>
+
+
+<html class="mainview">
+<head>
+	<title>Welcome to FaceJunk!</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
+	<script src="./assets/js/wallpaper.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="./assets/js/register.js"></script>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+<body>
+    Signup successful!
+  </body>
+</html>
+
+
+</div>

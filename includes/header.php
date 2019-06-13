@@ -43,6 +43,7 @@ if (isset($_SESSION['username'])) {
     <a href="#"><i class="fas fa-bullhorn" title='Notifications'></i> </a>
     <a href="#"><i class="fas fa-skull-crossbones" title='Messages'></i> </a>
     <a href="#"><i class="fas fa-frog" title='Users'></i> </a>
+    <a href="assets/bathroomwall/chatapp.php"><i class="fas fa-restroom" title='Bathroom Wall'></i> </a>
     <a href="#"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
   </nav>
   </div>
