@@ -1,6 +1,12 @@
 <?php
 //-------------------THE FOLLOWING IS EMAIL SENT WHEN YOU SIGN UP
-include("includes/form_handlers/register_handler.php");
+// require 'register_handler.php';
+require 'config/config.php';
+
+
+$email = mysqli_query($con, "SELECT * FROM users WHERE email='$em'");
+$emailAddress = mysqli_fetch_array($email);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -11,7 +17,7 @@ require 'C:\xampp\composer\vendor\autoload.php';
 	try {
 	
 		$mail->setFrom('rockabillyriot@hotmail.com', 'Justin Wozniak');
-		$mail->addAddress($emailAddressUsedToSendTo, 'Emperor');
+		$mail->addAddress($emailAddress['email'], 'Emperor');
 		$mail->Subject = 'FaceJunk all over the place!~';
 	
 		$mail->isHTML(TRUE);

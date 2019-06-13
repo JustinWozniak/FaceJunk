@@ -135,12 +135,12 @@ if(isset($_POST['register_button'])){
       $profile_pic = "assets/images/profile_pics/defaults/scaryguy.png";
     else if ($rand == 9)
       $profile_pic = "assets/images/profile_pics/defaults/snaggletooth.jpg";
-    echo ($rand);
-    echo ($secret_signup_key);
+    // echo ($rand);
+    // echo ($secret_signup_key);
 
 
     $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',', $secret_signup_key)");
-	include("includes/email/register_email.php");
+	// include("includes/email/register_email.php");
 		array_push($error_array, "<span style='color: #14C800;'>You're all set! Goahead and login!</span><br>");
 
 		//Clear session variables 
