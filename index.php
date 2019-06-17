@@ -13,6 +13,7 @@ include("includes/header.php");
 </head>
 
 <body class="mainview">
+<script src="./assets/js/wallpaper.js"></script>
   <div class="user_details column">
     <a href="#"><img src="<?php echo $user['profile_pic'];  ?>"></a>
     <div class='user_details_left_right'>
@@ -26,7 +27,14 @@ echo "Likes: ".$user['num_likes'];
 ?>
   </div>
   </div>
-  <script src="./assets/js/wallpaper.js"></script>
+<div class='main_column column'>
+<form class='post_form' action="index.php" method=POST>
+  <textarea name='post_text' id='post_text' placeholder="Whatta ya wanna say yo!!!?"></textarea>
+  <input type='submit' name='post' id="post_button" value="post">
+  <hr>
+
+</form>
+</div>
 
 
   </div>

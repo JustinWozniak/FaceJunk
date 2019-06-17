@@ -1,3 +1,4 @@
+*   {    font-family: cursive;}
 
 .top_bar    {
     width:100%;
@@ -49,16 +50,16 @@ min-width: 950px;
 }
 
 .column {
-    background-color: rgb(121, 102, 231);
+    background-color: rgb(171, 161, 226);
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgb(224, 54, 125);
+    box-shadow: 2px 2px 2px rgb(107, 36, 66);
     z-index: -1;
 }
 
 .user_details   {
-    width:40%;
+    width:25%;
     float:left ;
     margin-bottom: 20px;
 }
@@ -73,4 +74,43 @@ min-width: 950px;
 height: 125px;
 border-radius: 5px;
 margin-right:5px; 
+}
+
+.main_column{
+    float: right;
+    width:70%;
+    z-index: -1;
+    min-height: 60px;
+}
+
+.post_form  {
+    width: 100%;
+}
+
+.post_form textarea {
+    width:100%;
+    height: 60px;
+    border-radius: 5px;
+    border:1px solid black;
+    /* margin-right: 5px; */
+    font-size: 18px;
+    background-color:silver;
+    box-shadow: 2px 2px 2px rgb(107, 36, 66);
+    padding: 15px;
+}
+
+.post_form input[type='submit'] {
+    width:11%;
+    height: 60px;
+    border-radius: 10px;
+    background-color: orangered;
+    box-shadow: 2px 2px 2px rgb(107, 36, 66);
+    padding: 15px;
+    margin: 10px;
+    font-size: 90%;
+    outline: 0;
+}
+.post_form input[type='submit']:active {
+padding: 4px 5px 4px 5px;
+background-color: rgb(38, 0, 255);
 }
