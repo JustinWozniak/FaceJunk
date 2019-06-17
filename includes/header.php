@@ -3,7 +3,7 @@ require 'config/config.php';
 
 if (isset($_SESSION['username'])) {
   $userLoggedIn = $_SESSION['username'];
-  echo  $userLoggedIn;
+  // echo  $userLoggedIn;
   $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
   $user = mysqli_fetch_array($user_details_query);
 } else {
@@ -40,7 +40,7 @@ if (isset($_SESSION['username'])) {
     <a href="<?php echo $userLoggedIn; ?>">
       <?php echo $user['first_name']; ?>
     </a>
-    <a href="#"><i class="fas fa-meh-rolling-eyes" title='Home'></i> </a>
+    <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Home'></i> </a>
     <a href="#"><i class="fas fa-bullhorn" title='Notifications'></i> </a>
     <a href="#"><i class="fas fa-skull-crossbones" title='Messages'></i> </a>
     <a href="#"><i class="fas fa-frog" title='Users'></i> </a>
@@ -50,6 +50,7 @@ if (isset($_SESSION['username'])) {
   </div>
   </div>
 
+<div class="wrapper">
 
   </body>
 

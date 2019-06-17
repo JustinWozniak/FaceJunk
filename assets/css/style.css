@@ -7,6 +7,8 @@
     margin: 10 10 0;
     min-width: 1050px;
     display: inline-flex;
+    position: fixed;
+    z-index: 10;
 }
 
 .headerLogo {
@@ -35,4 +37,28 @@ nav{
     right: 1px;
     position: absolute;
     margin: 10px;
+}
+
+.wrapper    {
+margin: 0 auto;
+top: 150px;
+position: relative;
+padding: 0 10px;
+width: 75%;
+min-width: 950px;
+}
+
+.column {
+    background-color: rgb(121, 102, 231);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 2px rgb(224, 54, 125);
+    z-index: -1;
+}
+
+.user_details   {
+    width:450px;
+    float:left ;
+    margin-bottom: 20px;
 }
