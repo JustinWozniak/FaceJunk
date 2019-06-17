@@ -52,13 +52,25 @@ min-width: 950px;
     background-color: rgb(121, 102, 231);
     padding: 10px;
     border: 1px solid black;
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow: 2px 2px 2px rgb(224, 54, 125);
     z-index: -1;
 }
 
 .user_details   {
-    width:450px;
+    width:40%;
     float:left ;
     margin-bottom: 20px;
+}
+
+.user_details_left_right    {
+    width:125 px;
+    display: inline-block;
+    position: absolute;
+}
+
+.user_details img   {
+height: 125px;
+border-radius: 5px;
+margin-right:5px; 
 }
