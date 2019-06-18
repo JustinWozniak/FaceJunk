@@ -40,8 +40,41 @@ class Post {
 		}
 	}
 
+	public function loadPostsFriends($data, $limit) {
+        $page = $data['page'];
+        $userLoggedIn = $this->user_obj->getUsername();
+
+        if ($page == 1) {
+            $start = 0;
+        } else {
+            $start = ($page - 1) * $limit;
+        }
 
 
+        $str = ""; //String to return
+        $data_query = mysqli_query($this->con, "SELECT * FROM posts WHERE deleted='no' ORDER BY id DESC");
+
+        if (mysqli_num_rows($data_query) > 0) {
+            $num_iterations = 0; //Number of results checked (not necasserily posted)
+            $count = 1;
+
+            while ($row = mysqli_fetch_array($data_query)) {
+                $id = $row['id'];
+                $body = $row['body'];
+                $added_by = $row['added_by'];
+                $date_time = $row['date_added'];
+
+                //Prepare user_to string so it can be included even if not posted to a user
+                if ($row['user_to'] == "none") {
+                    $user_to = "";
+                } else {
+                    $user_to_obj = new User($con, $row['user_to']);
+                    $user_to_name = $user_to_obj->getFirstAndLastName();
+                    $user_to = "to <a href='" . $row['user_to'] ."'>" . $user_to_name . "</a>";
+                }
+            }
+        }
+    }
 
 }
 

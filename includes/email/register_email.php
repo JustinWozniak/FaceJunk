@@ -66,15 +66,16 @@ require 'C:\xampp\composer\vendor\autoload.php';
 <html>
 <head>
 	<title>Welcome to FaceJunk!</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
-	<script src="./assets/js/wallpaper.js"></script>
+	<link rel="stylesheet" type="text/css" href="./success_style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="./assets/js/register.js"></script>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body class='mainview'>
+	<div class="thisClass">
 	Signup successful!<br>
-	PLEASE go check your email for rules and disclaimer before signing in!!!!
+	PLEASE go check your email for rules and disclaimer before signing in!!!!<br><hr>
+	<a href="javascript:history.back()">Go Back</a>
+	</div>
   </body>
 </html>
 
