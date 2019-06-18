@@ -1,10 +1,23 @@
 <?php
 //-------------------THE FOLLOWING IS EMAIL SENT WHEN YOU SIGN UP
 // require 'register_handler.php';
-// require 'config/config.php';
+
+ob_start(); //Turns on output buffering 
+session_start();
+
+$timezone = date_default_timezone_set("America/Toronto");
+
+$con = mysqli_connect("localhost", "root", "", "social"); //Connection variable
+
+if(mysqli_connect_errno()) 
+{
+	echo "Failed to connect: " . mysqli_connect_errno();
+}
 
 
-$email = mysqli_query($con, "SELECT * FROM users WHERE email='$em'");
+
+
+$email = mysqli_query($con, "SELECT email from users ORDER by id DESC LIMIT 1");
 $emailAddress = mysqli_fetch_array($email);
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -50,7 +63,7 @@ require 'C:\xampp\composer\vendor\autoload.php';
 	?>
 
 
-<html class="mainview">
+<html>
 <head>
 	<title>Welcome to FaceJunk!</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
@@ -59,8 +72,9 @@ require 'C:\xampp\composer\vendor\autoload.php';
 	<script src="./assets/js/register.js"></script>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
-<body>
-    Signup successful!
+<body class='mainview'>
+	Signup successful!<br>
+	PLEASE go check your email for rules and disclaimer before signing in!!!!
   </body>
 </html>
 

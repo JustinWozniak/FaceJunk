@@ -1,5 +1,6 @@
 <?php
 include("includes/header.php");
+include("includes/classes/Users.php");
 // session_destroy();
 ?>
 <html>

@@ -100,7 +100,6 @@ if(isset($_POST['register_button'])){
 
 		//Generate username by concatenating first name and last name
 		$username = strtolower($fname . "_" . $lname);
-		$emailAddressUsedToSendTo = $em;
 		$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
 
 
@@ -147,8 +146,8 @@ if(isset($_POST['register_button'])){
 		$_SESSION['reg_lname'] = "";
 		$_SESSION['reg_email'] = "";
 		$_SESSION['reg_email2'] = "";
-		// header("Location:./includes/email/register_email.php");
-	}
+	
+	}	header("Location:./includes/email/register_email.php");
 
 }
 ?>
