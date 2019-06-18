@@ -46,6 +46,7 @@ if (isset($_SESSION['username'])) {
     <a href="#"><i class="fas fa-frog" title='Users'></i> </a>
     <a href="assets/bathroomwall/chatapp.php"><i class="fas fa-restroom" title='Bathroom Wall'></i> </a>
     <a href="#"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
+    <a href="includes/handlers/logout.php"><i class="fas fa-heart-broken" title='Log Out'></i> </a>
   </nav>
   </div>
   </div>
