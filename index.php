@@ -42,6 +42,12 @@ echo "Likes: ".$user['num_likes'];
   <hr>
 
 </form>
+
+<?php
+  $post = new Post($con, $userLoggedIn);
+  $post->loadPostsFriends();
+
+?>
 </div>
 
 

@@ -39,16 +39,16 @@ require 'C:\xampp\composer\vendor\autoload.php';
 		Anything goes so watch out!<br>
 		Freddom of speech is pushed hard here, but harrassment will not be tolerated....
 		All comments on posts are anonomous, so be aware....
-		Apon sign in you will be given a random picture for your profile pic, but feel free to change it....and if your bored with the background, just hit refresh...<br>
-		Theres 40 random ones that will be shown.</html><br>
-		This site HAS NOT been optimized so, it may be best to stick to using it over wi-fi for the start.
+		Apon sign in you will be given one of TWENTY random pictures for your profile pic. May be a rockstar, a celebrity....who knows??? But feel free to change it....and if your bored with the background, just hit refresh...<br>
+		Theres also 40 random ones that will be shown.</html><br>
+		This site HAS NOT been optimized so, it may be best to stick to using it over wi-fi for the start. I am not responcible for you using 10 gigs of data.
 		ALSO....I DO NOT HAVE ACCESS TO YOUR PASSWORDS!!!!!!!! And havent implimented a forgotten password page yet.<br>
 		If you forget your password you will need to have your account deleted if you want to make a new account with the same e-mail.<br><BR>
 		With all that being said, Im open to any ideas anybody has on making this experience better...I am new to 
 		all this programming, but as i continue to grow, I hope Gonzo does as well.<br>
 		Thanks for signing up, ENJOY!!!!<br>
 		----------Justin Wozniak......President, Owner, Stoner, Beer Drinker, FUCKIN ROCKSTAR FROM ANOTHER GALAXY, Guitar bender, HUNTER S.THOMPSON FANATIC, rambler on of words ;)<br><br>
-		Crazy is a term of art; Insane is a term of law. Remember that, and you will save yourself a lot of trouble. Hunter S. Thompson';
+		Crazy is a term of art; Insane is a term of law. Remember that, and you will save yourself a lot of trouble....Hunter S. Thompson';
 		$mail->AltBody = 'You better take care of me Lord, if you dont youre gonna have me on your hands.';
 		$mail->addAttachment('C:\xampp\htdocs\tests\Gonzo\assets\images\logos\Gonzo logo.jpg', 'We cant stop here....');
 		$mail->isSMTP();

@@ -114,3 +114,11 @@ margin-right:5px;
 padding: 4px 5px 4px 5px;
 background-color: rgb(38, 0, 255);
 }
+
+a   {
+    color: black;
+}
+
+.posted_by  {
+    color: red;
+}

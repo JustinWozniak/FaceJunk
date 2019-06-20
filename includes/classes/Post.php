@@ -42,16 +42,16 @@ class Post
 		}
 	}
 
-	public function loadPostsFriends($data, $limit)
+	public function loadPostsFriends()
 	{
 
-		$page = $data['page'];
+		// $page = $data['page'];
 		$userLoggedIn = $this->user_obj->getUsername();
 
-		if ($page == 1)
-			$start = 0;
-		else
-			$start = ($page - 1) * $limit;
+		// if ($page == 1)
+		// 	$start = 0;
+		// else
+		// 	$start = ($page - 1) * $limit;
 
 
 		$str = ""; //String to return 
@@ -85,18 +85,18 @@ class Post
 				}
 
 				$user_logged_obj = new User($this->con, $userLoggedIn);
-				if ($user_logged_obj->isFriend($added_by)) {
+				// if ($user_logged_obj->isFriend($added_by)) {
 
-					if ($num_iterations++ < $start)
-						continue;
+				// 	if ($num_iterations++ < $start)
+				// 		continue;
 
 
-					//Once 10 posts have been loaded, break
-					if ($count > $limit) {
-						break;
-					} else {
-						$count++;
-					}
+					// //Once 10 posts have been loaded, break
+					// if ($count > $limit) {
+					// 	break;
+					// } else {
+					// 	$count++;
+					// }
 
 					$user_details_query = mysqli_query($this->con, "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'");
 					$user_row = mysqli_fetch_array($user_details_query);
@@ -155,13 +155,13 @@ class Post
 							$time_message = $interval->s . " seconds ago";
 						}
 					}
-
+						//concatinate the following onto str now that we have the info...
 					$str .= "<div class='status_post'>
 								<div class='post_profile_pic'>
 									<img src='$profile_pic' width='50'>
 								</div>
 
-								<div class='posted_by' style='color:#ACACAC;'>
+								<div class='posted_by'>
 									<a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
 								</div>
 								<div id='post_body'>
@@ -174,12 +174,12 @@ class Post
 				}
 			} //End while loop
 
-			if ($count > $limit)
-				$str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
-							<input type='hidden' class='noMorePosts' value='false'>";
-			else
-				$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> No more posts to show! </p>";
-		}
+			// if ($count > $limit)
+			// 	$str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
+			// 				<input type='hidden' class='noMorePosts' value='false'>";
+			// else
+			// 	$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> No more posts to show! </p>";
+		
 
 		echo $str;
 	}

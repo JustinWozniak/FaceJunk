@@ -133,8 +133,36 @@ if(isset($_POST['register_button'])){
     else if ($rand == 8)
       $profile_pic = "assets/images/profile_pics/defaults/scaryguy.png";
     else if ($rand == 9)
-      $profile_pic = "assets/images/profile_pics/defaults/snaggletooth.jpg";
-    // echo ($rand);
+	  $profile_pic = "assets/images/profile_pics/defaults/snaggletooth.jpg";
+	  else if ($rand == 10)
+	  $profile_pic = "assets/images/profile_pics/defaults/ace.jpg";
+	  else if ($rand == 11)
+	  $profile_pic = "assets/images/profile_pics/defaults/danzig.jpg";
+	  else if ($rand == 12)
+	  $profile_pic = "assets/images/profile_pics/defaults/depp.jpg";
+	  else if ($rand == 12)
+	  $profile_pic = "assets/images/profile_pics/defaults/dimebag.jpg";
+	  else if ($rand == 13)
+	  $profile_pic = "assets/images/profile_pics/defaults/paul.jpg";
+	  else if ($rand == 14)
+	  $profile_pic = "assets/images/profile_pics/defaults/hunter.jpg";
+	  else if ($rand == 15)
+	  $profile_pic = "assets/images/profile_pics/defaults/ivy.jpg";
+	  else if ($rand == 16)
+	  $profile_pic = "assets/images/profile_pics/defaults/jonesy.jpg";
+	  else if ($rand == 17)
+	  $profile_pic = "assets/images/profile_pics/defaults/keef.jpg";
+	  else if ($rand == 18)
+	  $profile_pic = "assets/images/profile_pics/defaults/kurdt.jpg";
+	  else if ($rand == 19)
+	  $profile_pic = "assets/images/profile_pics/defaults/manson.jpg";
+	  else if ($rand == 20)
+      $profile_pic = "assets/images/profile_pics/defaults/robzombie.jpg";
+	
+	
+	
+	
+	  // echo ($rand);
     // echo ($secret_signup_key);
 
 
