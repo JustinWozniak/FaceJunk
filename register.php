@@ -6,7 +6,7 @@ require 'includes/form_handlers/login_handler.php';
 
 <html class="mainview">
 <head>
-	<title>Welcome to FaceJunk!</title>
+	<title>Gonzo---A Social Network For All Us Freaks!~</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
 	<script src="./assets/js/wallpaper.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -14,7 +14,7 @@ require 'includes/form_handlers/login_handler.php';
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
-<img src="./assets/images/logos/facejunk logo.jpg" class="logo1">
+<img src="./assets/images/logos/Gonzo logo.jpg" class="logo1">
 <div id="first">
 	<form action="register.php" method="POST" class="registerForm">
 		<input type="email" name="log_email" placeholder="Email Address" value="<?php 

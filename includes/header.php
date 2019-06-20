@@ -22,7 +22,7 @@ if (isset($_SESSION['username'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="description" content="" />
-  <title>Welcome to FaceJunk!!!!~</title>
+  <title>Gonzo---A Social Network For All Us Freaks!~~</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="./assets/js/bootstrap.js"></script>
 
@@ -33,7 +33,7 @@ if (isset($_SESSION['username'])) {
   </head>
   <body>
 <div class=" top_bar">
-  <img src="assets/images/logos/facejunk logo.jpg" alt="logo" class="headerLogo">
+  <img src="assets/images/logos/Gonzo logo.jpg" alt="logo" class="headerLogo">
   </a>
 
   <nav>
