@@ -112,7 +112,7 @@ if(isset($_POST['register_button'])){
 		}
 
     //Profile picture assignment
-    $rand = rand(1, 9); //Random number between 1 and 9
+    $rand = rand(1, 28); //Random number between 1 and 28
 
     $secret_signup_key = rand(1, 10000); //Random number between 1 and 10000
 
@@ -157,7 +157,25 @@ if(isset($_POST['register_button'])){
 	  else if ($rand == 19)
 	  $profile_pic = "assets/images/profile_pics/defaults/manson.jpg";
 	  else if ($rand == 20)
-      $profile_pic = "assets/images/profile_pics/defaults/robzombie.jpg";
+	  $profile_pic = "assets/images/profile_pics/defaults/robzombie.jpg";
+	  else if ($rand == 21)
+	  $profile_pic = "assets/images/profile_pics/defaults/catwoman.jpg";
+	  else if ($rand == 22)
+	  $profile_pic = "assets/images/profile_pics/defaults/Cruela.jpg";
+	  else if ($rand == 23)
+	  $profile_pic = "assets/images/profile_pics/defaults/elvira.jpg";
+	  else if ($rand == 24)
+	  $profile_pic = "assets/images/profile_pics/defaults/emma.jpg";
+	  else if ($rand == 25)
+	  $profile_pic = "assets/images/profile_pics/defaults/hannigan.jpg";
+	  else if ($rand == 26)
+	  $profile_pic = "assets/images/profile_pics/defaults/howdy.jpg";
+	  else if ($rand == 26)
+	  $profile_pic = "assets/images/profile_pics/defaults/regan.jpg";
+	  else if ($rand == 27)
+	  $profile_pic = "assets/images/profile_pics/defaults/tiffany.jpg";
+	  else if ($rand == 28)
+      $profile_pic = "assets/images/profile_pics/defaults/wednesday.jpg";
 	
 	
 	
