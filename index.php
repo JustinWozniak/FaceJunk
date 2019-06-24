@@ -18,7 +18,7 @@ if(isset($_POST['post'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
    <meta name="description" content="" />
- 
+   <script src="./assets/js/infinitScroll.js"></script>
  </head>
  
  <body class="mainview">
@@ -55,61 +55,6 @@ if(isset($_POST['post'])){
 
 
 	</div>
-
-	<script>
-	var userLoggedIn = '<?php echo $userLoggedIn; ?>';
-
-	$(document).ready(function() {
-
-		$('#loading').show();
-
-		//Original ajax request for loading first posts 
-		$.ajax({
-			url: "includes/handlers/ajax_load_posts.php",
-			type: "POST",
-			data: "page=1&userLoggedIn=" + userLoggedIn,
-			cache:false,
-
-			success: function(data) {
-				$('#loading').hide();
-				$('.posts_area').html(data);
-			}
-		});
-
-		$(window).scroll(function() {
-			let height = $('.posts_area').height(); //Div containing posts
-			let scroll_top = $(this).scrollTop();
-			let page = $('.posts_area').find('.nextPage').val();
-			let noMorePosts = $('.posts_area').find('.noMorePosts').val();
-
-			if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
-				$('#loading').show();
-
-				let ajaxReq = $.ajax({
-					url: "includes/handlers/ajax_load_posts.php",
-					type: "POST",
-					data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
-					cache:false,
-
-					success: function(response) {
-						$('.posts_area').find('.nextPage').remove(); //Removes current .nextpage 
-						$('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage 
-
-						$('#loading').hide();
-						$('.posts_area').append(response);
-					}
-				});
-
-			} //End if 
-
-			return false;
-
-		}); //End (window).scroll(function())
-
-
-	});
-
-	</script>
 
 
 
