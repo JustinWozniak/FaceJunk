@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -29,11 +30,12 @@
 				element.style.display = "none";
 			else
 				element.style.display = "block";
+		
 		}
 	</script>
 
 	<?php
-	//Get id of post
+	//Get id of post through URL
 	if (isset($_GET['post_id'])) {
 		$post_id = $_GET['post_id'];
 	}
@@ -56,7 +58,7 @@
 		<input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
 	</form>
 
-	<!-- Load comments -->
+	<!-- Load comments here-->
 
 
 
