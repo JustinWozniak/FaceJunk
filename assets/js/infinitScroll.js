@@ -1,15 +1,15 @@
 
    $(function(){
  
-       var userLoggedIn = '<?php echo $userLoggedIn; ?>';
-       var inProgress = false;
+       let userLoggedIn = '<?php echo $userLoggedIn; ?>';
+       let inProgress = false;
  
        loadPosts(); //Load first posts
  
        $(window).scroll(function() {
-           var bottomElement = $(".status_post").last();
-           var noMorePosts = $('.posts_area').find('.noMorePosts').val();
- 
+        let bottomElement = $(".status_post").last();
+        let noMorePosts = $('.posts_area').find('.noMorePosts').val();
+
            // isElementInViewport uses getBoundingClientRect(), which requires the HTML DOM object, not the jQuery object. The jQuery equivalent is using [0] as shown below.
            if (isElementInView(bottomElement[0]) && noMorePosts == 'false') {
                loadPosts();
@@ -18,13 +18,14 @@
  
        function loadPosts() {
            if(inProgress) { //If it is already in the process of loading some posts, just return
+            
                return;
            }
           
            inProgress = true;
            $('#loading').show();
  
-           var page = $('.posts_area').find('.nextPage').val() || 1; //If .nextPage couldn't be found, it must not be on the page yet (it must be the first time loading posts), so use the value '1'
+           let page = $('.posts_area').find('.nextPage').val() || 1; //If .nextPage couldn't be found, it must not be on the page yet (it must be the first time loading posts), so use the value '1'
  
            $.ajax({
                url: "includes/handlers/ajax_load_posts.php",
@@ -51,7 +52,7 @@
                 return;
             }
  
-           var rect = el.getBoundingClientRect();
+            let rect = el.getBoundingClientRect();
  
            return (
                rect.top >= 0 &&

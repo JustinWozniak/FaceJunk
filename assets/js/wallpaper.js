@@ -1,6 +1,6 @@
 //sets images to an array and picks a random one....
 
-var images = [
+let images = [
   "./assets/images/backgrounds/fractals/1.png",
   "./assets/images/backgrounds/fractals/2.png",
   "./assets/images/backgrounds/fractals/3.png",
