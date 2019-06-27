@@ -106,6 +106,7 @@ class Post {
 					?>
 					<script>
 	function toggle<?php echo $id; ?>() {
+	
 			let element = document.getElementById("toggleComment<?php echo $id; ?>");
 
 			if (element.style.display == "block")
@@ -188,7 +189,7 @@ class Post {
 									<img src='$profile_pic' width='50'>
 								</div>
 
-								<div class='posted_by' style='color:#ACACAC;'>
+								<div class='posted_by'>
 									<a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
 								</div>
 								<div id='post_body'>
@@ -198,7 +199,7 @@ class Post {
 
 							</div>
 							<div class ='post_comment' id='toggleComment$id' style='display:none;'>
-							<iframe src='comment_frame.php?post_id=$id id='comment_iframe'></iframe>
+							<iframe src='comment_frame.php?post_id=$id' id='comment_iframe' frameborder='0'></iframe>
 							</div>
 							<hr>";
 				}

@@ -1,14 +1,11 @@
 <html>
-
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
 </head>
-
 <body>
 
-	<?php
+	<?php  
 	require 'config/config.php';
 	include("includes/classes/User.php");
 	include("includes/classes/Post.php");
@@ -17,35 +14,34 @@
 		$userLoggedIn = $_SESSION['username'];
 		$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
 		$user = mysqli_fetch_array($user_details_query);
-	} else {
+	}
+	else {
 		header("Location: register.php");
 	}
 
 	?>
 	<script>
 		function toggle() {
-			let element = document.getElementById("comment_section");
+			var element = document.getElementById("comment_section");
 
-			if (element.style.display == "block")
+			if(element.style.display == "block") 
 				element.style.display = "none";
-			else
+			else 
 				element.style.display = "block";
-		
 		}
 	</script>
 
-	<?php
-	//Get id of post through URL
-	if (isset($_GET['post_id'])) {
+	<?php  
+	//Get id of post
+	if(isset($_GET['post_id'])) {
 		$post_id = $_GET['post_id'];
 	}
 
 	$user_query = mysqli_query($con, "SELECT added_by, user_to FROM posts WHERE id='$post_id'");
 	$row = mysqli_fetch_array($user_query);
-
 	$posted_to = $row['added_by'];
 
-	if (isset($_POST['postComment' . $post_id])) {
+	if(isset($_POST['postComment' . $post_id])) {
 		$post_body = $_POST['post_body'];
 		$post_body = mysqli_escape_string($con, $post_body);
 		$date_time_now = date("Y-m-d H:i:s");
@@ -58,7 +54,7 @@
 		<input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
 	</form>
 
-	<!-- Load comments here-->
+	<!-- Load comments -->
 
 
 
@@ -66,5 +62,4 @@
 
 
 </body>
-
 </html>
