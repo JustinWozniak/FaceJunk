@@ -1,3 +1,16 @@
+<?php
+require 'config/config.php';
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+
+if (isset($_SESSION['username'])) {
+	$userLoggedIn = $_SESSION['username'];
+	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+	$user = mysqli_fetch_array($user_details_query);
+} else {
+	header("Location: register.php");
+}
+?>
 <html>
 
 <head>
@@ -7,20 +20,6 @@
 
 <body>
 
-	<?php
-	require 'config/config.php';
-	include("includes/classes/User.php");
-	include("includes/classes/Post.php");
-
-	if (isset($_SESSION['username'])) {
-		$userLoggedIn = $_SESSION['username'];
-		$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
-		$user = mysqli_fetch_array($user_details_query);
-	} else {
-		header("Location: register.php");
-	}
-
-	?>
 	<script>
 		function toggle() {
 			var element = document.getElementById("comment_section");
@@ -124,7 +123,7 @@
 
 			$user_obj = new User($con, $posted_by);
 
-// target="_parent" below loads the comment outside of the iframe in its own section
+			// target="_parent" below loads the comment outside of the iframe in its own section
 			?>
 			<div class="comment_section">
 				<a href="<?php echo $posted_by ?>" target="_parent"><img src="<?php echo $user_obj->getProfilePic(); ?>" title="<?php echo $posted_by; ?>" style="float:left;" height="30"></a>
@@ -136,14 +135,10 @@
 
 	}
 } else {
-	echo "<center><br><br>No Comments to Show!</center>";
+	echo "<center><br><br>No Comments here bro!.....</center>";
 }
 
-
 ?>
-
-
-
 
 </body>
 

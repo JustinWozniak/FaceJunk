@@ -146,7 +146,7 @@ a {
 #comment_iframe {
 	max-height: 250px;	
 	width: 100%;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 
@@ -158,9 +158,10 @@ a {
 .comment_section img {
 	margin: 0 3px 3px 3px;
     border-radius: 3px;
-    color: #000000;
+    color:red;
     border-radius: 5px;
 }
+
 
 
 /* used to hide names in posts */
@@ -188,4 +189,14 @@ a {
 	margin-top: 3px;
 	position: absolute;
 	text-shadow: rgb(0, 0, 0) 0.5px 0.5px 0px;
+}
+
+
+.newsfeedpostoptions    {
+    padding: 0;
+    text-decoration: none;
+    color:rgb(88, 8, 8);
+    border:none;
+    text-align: center;
+
 }
