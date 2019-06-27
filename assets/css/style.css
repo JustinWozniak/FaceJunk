@@ -1,7 +1,9 @@
-*   {    font-family: cursive;}
+* {
+    font-family: cursive;
+}
 
-.top_bar    {
-    width:100%;
+.top_bar {
+    width: 100%;
     height: 120px;
     background-color: black;
     border-bottom: 5px solid rgb(9, 170, 22);
@@ -13,40 +15,40 @@
 }
 
 .headerLogo {
-    width:40%;
+    width: 40%;
     height: 100%;
-    
+
 }
 
 nav a {
     position: relative;
-    color:white;
+    color: white;
     text-decoration: none;
     font-size: 40px;
 }
 
 nav a:hover {
-  color: rgb(9, 170, 22);
-  text-decoration: none;
+    color: rgb(9, 170, 22);
+    text-decoration: none;
 }
 nav hover:active {
     background-color: rgb(9, 170, 22);
 }
 
-nav{
+nav {
     float: right;
     right: 1px;
     position: absolute;
     margin: 10px;
 }
 
-.wrapper    {
-margin: 0 auto;
-top: 150px;
-position: relative;
-padding: 0 10px;
-width: 75%;
-min-width: 950px;
+.wrapper {
+    margin: 0 auto;
+    top: 150px;
+    position: relative;
+    padding: 0 10px;
+    width: 75%;
+    min-width: 950px;
 }
 
 .column {
@@ -58,49 +60,49 @@ min-width: 950px;
     z-index: -1;
 }
 
-.user_details   {
-    width:25%;
-    float:left ;
+.user_details {
+    width: 25%;
+    float: left;
     margin-bottom: 20px;
 }
 
-.user_details_left_right    {
-    width:125 px;
+.user_details_left_right {
+    width: 125 px;
     display: inline-block;
     position: absolute;
 }
 
-.user_details img   {
-height: 125px;
-border-radius: 5px;
-margin-right:5px; 
+.user_details img {
+    height: 125px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 
-.main_column{
+.main_column {
     float: right;
-    width:70%;
+    width: 70%;
     z-index: -1;
     min-height: 60px;
 }
 
-.post_form  {
+.post_form {
     width: 100%;
 }
 
 .post_form textarea {
-    width:100%;
+    width: 100%;
     height: 60px;
     border-radius: 5px;
-    border:1px solid black;
+    border: 1px solid black;
     /* margin-right: 5px; */
     font-size: 18px;
-    background-color:silver;
+    background-color: silver;
     box-shadow: 2px 2px 2px rgb(107, 36, 66);
     padding: 15px;
 }
 
 .post_form input[type='submit'] {
-    width:11%;
+    width: 11%;
     height: 60px;
     border-radius: 10px;
     background-color: orangered;
@@ -111,32 +113,79 @@ margin-right:5px;
     outline: 0;
 }
 .post_form input[type='submit']:active {
-padding: 4px 5px 4px 5px;
-background-color: rgb(38, 0, 255);
+    padding: 4px 5px;
+    background-color: rgb(38, 0, 255);
 }
 
-a   {
+a {
     color: black;
 }
 
-.posted_by  {
+.posted_by {
     color: red;
-}
-
-.status_post    {
-width:96%;
-font-size: 19px;
-padding:0px 5px;
-min-height: 75px;
-
-}
-
-.post_profile_pic       {
-    float:left;
-    margin-right:7px;
     
 }
 
-.post_profile_pic img{
+.status_post {
+    width: 96%;
+    font-size: 19px;
+    padding: 0 5px;
+    min-height: 75px;
+    cursor: pointer;
+}
+
+.post_profile_pic {
+    float: left;
+    margin-right: 7px;
+
+}
+
+.post_profile_pic img {
     border-radius: 5px;
+}
+#comment_iframe {
+	max-height: 250px;	
+	width: 100%;
+	margin-top: 5px;
+}
+
+
+.comment_section {
+    padding: 0 5px 5px 5px;
+    background-color: rgb(151, 146, 177);
+}
+
+.comment_section img {
+	margin: 0 3px 3px 3px;
+    border-radius: 3px;
+    color: #000000;
+    border-radius: 5px;
+}
+
+
+/* used to hide names in posts */
+/* .comment_section b {
+	visibility: hidden;
+} */
+#comment_form textarea {
+	border-color: rgb(0, 0, 0);
+	width: 85%;
+	height: 50px;
+	border-radius: 5px;
+	color: #352f2f;
+	font-size: 20px;
+	margin: 3px 3px 3px 5px;
+}
+
+#comment_form input[type="submit"] {
+    border-color: rgb(0, 0, 0);
+    color: black;
+	background-color: rgb(9, 136, 30);
+	color: #000000;
+	border-radius: 5px;
+	width: 13%;
+	height: 35px;
+	margin-top: 3px;
+	position: absolute;
+	text-shadow: rgb(0, 0, 0) 0.5px 0.5px 0px;
 }
