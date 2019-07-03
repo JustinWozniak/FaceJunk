@@ -1,5 +1,8 @@
 <?php
 include("includes/header.php");
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+
 if (isset($_GET['profile_username'])) {
 	$username = $_GET['profile_username'];
 	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
@@ -12,19 +15,18 @@ if (isset($_GET['profile_username'])) {
 ?>
 
 <head>
-	
+
 </head>
 
 <body class="mainview">
-<script src="./assets/js/wallpaper.js"></script>
+	<script src="./assets/js/wallpaper.js"></script>
 
-<style type="text/css">
-	 	.wrapper {
-	 		margin-left: 10px;
+	<style type="text/css">
+		.wrapper {
+			margin-left: 10px;
 			padding-left: 10px;
-	 	}
-
- 	</style>
+		}
+	</style>
 	<div class="profile_left">
 		<img src="<?php echo $user_array['profile_pic']; ?>">
 		<div class="profile_info">
@@ -32,6 +34,33 @@ if (isset($_GET['profile_username'])) {
 			<p><?php echo "Likes: " . $user_array['num_likes']; ?></p>
 			<p><?php echo "Friends: " . $num_friends ?></p>
 		</div>
+		<form action="<?php echo $username; ?>" method="POST">
+			<?php
+			$profile_user_obj = new User($con, $username);
+			if ($profile_user_obj->isClosed()) {
+				header("Location: user_closed.php");
+			}
+
+			$logged_in_user_obj = new User($con, $userLoggedIn);
+			//means user IS NOT on their own profile
+			if ($userLoggedIn != $username) {
+
+				if ($logged_in_user_obj->isFriend($username)) {
+					echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
+				} else if ($logged_in_user_obj->didReceiveRequest($username)) {
+					echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
+				} else if ($logged_in_user_obj->didSendRequest($username)) {
+					echo '<input type="submit" name="" class="default" value="Request Sent"><br>';
+				} else
+					echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>';
+			}
+
+
+
+			?>
+
+
+		</form>
 
 	</div>
 	</div>
