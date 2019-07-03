@@ -9,11 +9,14 @@
 
     <style type="text/css">
         * {
-            font-family: Arial, Helvetica, Sans-serif;
+            font-family: cursive;
         }
 
         body {
             background-color: #fff;
+           margin: 15px;
+           margin-bottom: 10px;
+           padding: 15px;
         }
 
         form {
@@ -61,7 +64,14 @@ if(isset($_POST['like_button'])) {
 
     //Insert Notification
 }
-//Unlike button
+	//Unlike button
+	if(isset($_POST['unlike_button'])) {
+		$total_likes--;
+		$query = mysqli_query($con, "UPDATE posts SET likes='$total_likes' WHERE id='$post_id'");
+		$total_user_likes--;
+		$user_likes = mysqli_query($con, "UPDATE users SET num_likes='$total_user_likes' WHERE username='$user_liked'");
+		$insert_user = mysqli_query($con, "DELETE FROM likes WHERE username='$userLoggedIn' AND post_id='$post_id'");
+	}
 
 
     //Check for previous likes

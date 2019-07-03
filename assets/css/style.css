@@ -123,7 +123,7 @@ a {
 
 .posted_by {
     color: red;
-    
+
 }
 
 .status_post {
@@ -140,28 +140,37 @@ a {
 
 }
 
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 3px;
+  }
+
 .post_profile_pic img {
     border-radius: 5px;
 }
 #comment_iframe {
-	max-height: 250px;	
-	width: 100%;
-	margin-top: 10px;
+    max-height: 250px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 
 .comment_section {
-    padding: 0 5px 5px 5px;
+    padding: 0 5px 5px;
     background-color: rgb(151, 146, 177);
 }
 
 .comment_section img {
-	margin: 0 3px 3px 3px;
+    margin: 0 3px 3px;
     border-radius: 3px;
-    color:red;
+    color: red;
     border-radius: 5px;
 }
-
 
 
 /* used to hide names in posts */
@@ -169,34 +178,54 @@ a {
 	visibility: hidden;
 } */
 #comment_form textarea {
-	border-color: rgb(0, 0, 0);
-	width: 85%;
-	height: 50px;
-	border-radius: 5px;
-	color: #352f2f;
-	font-size: 20px;
-	margin: 3px 3px 3px 5px;
+    border-color: rgb(0, 0, 0);
+    width: 85%;
+    height: 50px;
+    border-radius: 5px;
+    color: #352f2f;
+    font-size: 20px;
+    margin: 3px 3px 3px 5px;
 }
 
 #comment_form input[type="submit"] {
     border-color: rgb(0, 0, 0);
     color: black;
-	background-color: rgb(9, 136, 30);
-	color: #000000;
-	border-radius: 5px;
-	width: 13%;
-	height: 35px;
-	margin-top: 3px;
-	position: absolute;
-	text-shadow: rgb(0, 0, 0) 0.5px 0.5px 0px;
+    background-color: rgb(9, 136, 30);
+    color: #000000;
+    border-radius: 5px;
+    width: 13%;
+    height: 35px;
+    margin-top: 3px;
+    position: absolute;
+    text-shadow: rgb(0, 0, 0) 0.5px 0.5px 0;
 }
 
 
-.newsfeedpostoptions    {
+.newsfeedpostoptions {
     padding: 0;
     text-decoration: none;
-    color:rgb(88, 8, 8);
-    border:none;
+    color: rgb(88, 8, 8);
+    border: none;
     text-align: center;
 
+}
+
+
+.newsfeedPostOptions iframe {
+    border: 0;
+    height: 22px;
+    width: 130px;
+}
+.comment_like {
+	background-color: transparent;
+	border: none;
+	font-size: 14px;
+	color: #c51d1d;
+
+
+}
+
+.like_value {
+	display: inline;
+	font-size: 14px;
 }
