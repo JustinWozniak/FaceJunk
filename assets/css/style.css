@@ -262,7 +262,7 @@ hr {
 	background-color: #f0ad4e;
 }
 .default {
-	background-color: #bdc3c7;
+	background-color: #83770f;
 }
 .success {
 	background-color: #2ecc71;
@@ -280,6 +280,6 @@ hr {
 	border-radius: 5px;
 	margin: 7px 0 0 7px;
 	border: none;
-	color: #fff;
+	color: rgb(94, 12, 12);
 }
 
