@@ -17,6 +17,14 @@ if (isset($_GET['profile_username'])) {
 
 <body class="mainview">
 <script src="./assets/js/wallpaper.js"></script>
+
+<style type="text/css">
+	 	.wrapper {
+	 		margin-left: 10px;
+			padding-left: 10px;
+	 	}
+
+ 	</style>
 	<div class="profile_left">
 		<img src="<?php echo $user_array['profile_pic']; ?>">
 		<div class="profile_info">
