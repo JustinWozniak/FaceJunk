@@ -2,6 +2,11 @@
 include("includes/header.php"); //Header 
 ?>
 
+<head>
+</head>
+ 
+ <body class="mainview">
+<script src="./assets/js/wallpaper.js"></script>
 <div class="main_column column" id="main_column">
 
     <h4>Friend Requests</h4>
