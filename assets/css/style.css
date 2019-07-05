@@ -283,3 +283,22 @@ hr {
 	color: rgb(94, 12, 12);
 }
 
+#accept_button {
+	width: 20%;
+	height: 28px;
+	border-radius: 5px;
+	margin: 5px;
+	border: none;
+	color: #fff;
+	background-color: #000000;
+}
+#ignore_button {
+	width: 20%;
+	height: 28px;
+	border-radius: 5px;
+	margin: 5px;
+	border: none;
+	color: #fff;
+	background-color: #d40e0e;
+}
+
