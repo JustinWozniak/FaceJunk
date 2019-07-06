@@ -27,6 +27,7 @@ if (isset($_SESSION['username'])) {
   <title>Gonzo---A Social Network For All Us Freaks!~~</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="./assets/js/bootstrap.js"></script>
+  <script src="assets/js/gonzo.js"></script>
 
   <!-- css things -->
   <script src="https://kit.fontawesome.com/7e196638a2.js"></script>
