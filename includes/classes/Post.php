@@ -62,33 +62,33 @@ class Post
 
 			$num_iterations = 0; //Number of results checked (not necasserily posted)
 			$count = 1;
-
-			while ($row = mysqli_fetch_array($data_query)) {
+			while($row = mysqli_fetch_array($data_query)) {
 				$id = $row['id'];
 				$body = $row['body'];
 				$added_by = $row['added_by'];
 				$date_time = $row['date_added'];
 
 				//Prepare user_to string so it can be included even if not posted to a user
-				if ($row['user_to'] == "none") {
+				if($row['user_to'] == "none") {
 					$user_to = "";
-				} else {
-					$user_to_obj = new User($con, $row['user_to']);
+				}
+				else {
+					$user_to_obj = new User($this->con, $row['user_to']);
 					$user_to_name = $user_to_obj->getFirstAndLastName();
-					$user_to = "to <a href='" . $row['user_to'] . "'>" . $user_to_name . "</a>";
+					$user_to = "to <a href='" . $row['user_to'] ."'>" . $user_to_name . "</a>";
 				}
 
 				//Check if user who posted, has their account closed
 				$added_by_obj = new User($this->con, $added_by);
-				if ($added_by_obj->isClosed()) {
+				if($added_by_obj->isClosed()) {
 					continue;
 				}
 
 				$user_logged_obj = new User($this->con, $userLoggedIn);
-				if ($user_logged_obj->isFriend($added_by)) {
+				if($user_logged_obj->isFriend($added_by)){
 
-					if ($num_iterations++ < $start)
-						continue;
+					if($num_iterations++ < $start)
+						continue; 
 
 
 					//Once 10 posts have been loaded, break
