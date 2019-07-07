@@ -62,32 +62,33 @@ class Post
 
 			$num_iterations = 0; //Number of results checked (not necasserily posted)
 			$count = 1;
-			while ($row = mysqli_fetch_array($data_query)) {
+			while($row = mysqli_fetch_array($data_query)) {
 				$id = $row['id'];
 				$body = $row['body'];
 				$added_by = $row['added_by'];
 				$date_time = $row['date_added'];
 
 				//Prepare user_to string so it can be included even if not posted to a user
-				if ($row['user_to'] == "none") {
+				if($row['user_to'] == "none") {
 					$user_to = "";
-				} else {
+				}
+				else {
 					$user_to_obj = new User($this->con, $row['user_to']);
 					$user_to_name = $user_to_obj->getFirstAndLastName();
-					$user_to = "to <a href='" . $row['user_to'] . "'>" . $user_to_name . "</a>";
+					$user_to = "to <a href='" . $row['user_to'] ."'>" . $user_to_name . "</a>";
 				}
 
 				//Check if user who posted, has their account closed
 				$added_by_obj = new User($this->con, $added_by);
-				if ($added_by_obj->isClosed()) {
+				if($added_by_obj->isClosed()) {
 					continue;
 				}
 
 				$user_logged_obj = new User($this->con, $userLoggedIn);
-				if ($user_logged_obj->isFriend($added_by)) {
+				if($user_logged_obj->isFriend($added_by)){
 
-					if ($num_iterations++ < $start)
-						continue;
+					if($num_iterations++ < $start)
+						continue; 
 
 
 					//Once 10 posts have been loaded, break
@@ -97,12 +98,6 @@ class Post
 						$count++;
 					}
 
-
-					if($userLoggedIn == $added_by)
-						$delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
-					else 
-						$delete_button = "";
-
 					$user_details_query = mysqli_query($this->con, "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'");
 					$user_row = mysqli_fetch_array($user_details_query);
 					$first_name = $user_row['first_name'];
@@ -111,7 +106,7 @@ class Post
 
 					?>
 				<script>
-					function toggle < ? php echo $id; ? > () {
+					function toggle<?php echo $id; ?>() {
 						let target = $(event.target);
 						if (!target.is("a")) {
 							let element = document.getElementById("toggleComment<?php echo $id; ?>");
@@ -188,7 +183,6 @@ class Post
 
 				<div class='posted_by' style='color:red;'>
 					<a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
-					$delete_button
 				</div>
 				<div id='post_body'>
 					$body
@@ -207,42 +201,48 @@ class Post
 				<iframe src='comment_frame.php?post_id=$id' id='comment_iframe' frameborder='0'></iframe>
 			</div>
 			<hr>";
-			}
-
-			?>
-			<script>
-				$(document).ready(function() {
-
-					$('#post<?php echo $id; ?>').on('click', function() {
-						bootbox.confirm("Are you sure you want to delete this post?", function(result) {
-
-							$.post("includes/form_handlers/delete_post.php?post_id=<?php echo $id; ?>", {
-								result: result
-							});
-
-							if (result)
-								location.reload();
-
-						});
-					});
-
-
-				});
-			</script>
-		<?php
-
-
-		} //End while loop
-
-		if ($count > $limit)
-			$str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
-			<input type='hidden' class='noMorePosts' value='false'>";
-		else
-			$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> No more posts to show! </p>";
-	}
-
-	echo $str;
 }
+
+?>
+<script>
+
+	$(document).ready(function() {
+
+		$('#post<?php echo $id; ?>').on('click', function() {
+			bootbox.confirm("Are you sure you want to delete this post?", function(result) {
+
+				$.post("includes/form_handlers/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
+
+				if(result)
+					location.reload();
+
+			});
+		});
+
+
+	});
+
+</script>
+<?php
+
+
+} //End while loop
+
+if($count > $limit) 
+$str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
+			<input type='hidden' class='noMorePosts' value='false'>";
+else 
+$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> No more posts to show! </p>";
+}
+
+echo $str;
+
+
+}
+
+
+
+
 }
 
 ?>
