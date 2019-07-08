@@ -84,7 +84,7 @@ nav {
     z-index: -1;
     min-height: 60px;
     padding: 15px;
-    margin: 10px;
+    margin: 0px;
 }
 
 .post_form {
@@ -92,7 +92,7 @@ nav {
 }
 
 .post_form textarea {
-    width: 100%;
+    width: 80%;
     height: 60px;
     border-radius: 5px;
     border: 1px solid black;
@@ -104,13 +104,13 @@ nav {
 }
 
 .post_form input[type='submit'] {
-    width: 11%;
-    height: 60px;
+    width: 15%;
+    height: 40px;
     border-radius: 10px;
     background-color: orangered;
     box-shadow: 2px 2px 2px rgb(107, 36, 66);
-    padding: 15px;
-    margin: 10px;
+    /* padding: 15px; */
+    /* margin: 10px; */
     font-size: 90%;
     outline: 0;
 }
@@ -302,3 +302,12 @@ hr {
 	background-color: #d40e0e;
 }
 
+.delete_button {
+	height: 30px;
+	width: 30px;
+	padding: 0;
+	float: right;
+	border-radius: 4px;
+	right: -15px;
+	position: relative;
+}
