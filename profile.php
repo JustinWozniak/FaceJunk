@@ -68,7 +68,7 @@ if(isset($_POST['respond_request'])) {
  					echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
  				}
  				else if ($logged_in_user_obj->didReceiveRequest($username)) {
- 					echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
+ 					echo '<input type="submit" name="respond_request" class="warning" value="YAY! Friend Request"><br>';
  				}
  				else if ($logged_in_user_obj->didSendRequest($username)) {
  					echo '<input type="submit" name="" class="default" value="Request Sent"><br>';
@@ -97,7 +97,7 @@ if(isset($_POST['respond_request'])) {
 
 	<div class="profile_main_column column">
 		<div class="posts_area"></div>
-    <img id="loading" src="assets/images/icons/loading.gif">
+    <img id="loading" src="assets/images/icons/pizzaLoad.gif">
 
 
 	</div>
