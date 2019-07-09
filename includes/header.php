@@ -32,11 +32,14 @@ if (isset($_SESSION['username'])) {
   <script src="assets/js/bootbox.min.js"></script>
   <script src="./assets/js/bootstrap.js"></script>
   <script src="assets/js/gonzo.js"></script>
+  <script src="assets/js/jquery.jcrop.js"></script>
+	<script src="assets/js/jcrop_bits.js"></script>
 
   <!-- css things -->
   <script src="https://kit.fontawesome.com/7e196638a2.js"></script>
+  <link rel="stylesheet" href="assets/css/jquery.Jcrop.css" type="text/css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css"">
-    <link rel=" stylesheet" type="text/css" href="./assets/css/style.css"">
+  <link rel=" stylesheet" type="text/css" href="./assets/css/style.css"">
   </head>
   <body>
 <div class=" top_bar">
