@@ -1,12 +1,11 @@
-<?php
+<?php 
 include("includes/header.php");
 
-
-if (isset($_GET['profile_username'])) {
+if(isset($_GET['profile_username'])) {
 	$username = $_GET['profile_username'];
 	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
 	$user_array = mysqli_fetch_array($user_details_query);
-	//num_friends is -1 due to fact that the array in the database starts with a comma
+
 	$num_friends = (substr_count($user_array['friend_array'], ",")) - 1;
 }
 
@@ -25,62 +24,80 @@ if(isset($_POST['respond_request'])) {
 	header("Location: requests.php");
 }
 
-?>
+ ?>
+
+ 	<style type="text/css">
+	 	.wrapper {
+	 		margin-left: 0px;
+			padding-left: 0px;
+	 	}
+
+ 	</style>
 
 <head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+   <meta name="description" content="" />
+   <script src="assets/js/infinitScroll.js"></script>
+ </head>
+ 
+ <body class="mainview">
+ <script src="./assets/js/wallpaper.js"></script>
+ 	<div class="profile_left">
+ 		<img src="<?php echo $user_array['profile_pic']; ?>">
 
-</head>
+ 		<div class="profile_info">
+ 			<p><?php echo "Posts: " . $user_array['num_posts']; ?></p>
+ 			<p><?php echo "Likes: " . $user_array['num_likes']; ?></p>
+ 			<p><?php echo "Friends: " . $num_friends ?></p>
+ 		</div>
 
-<body class="mainview">
-	<script src="./assets/js/wallpaper.js"></script>
+ 		<form action="<?php echo $username; ?>" method="POST">
+ 			<?php 
+ 			$profile_user_obj = new User($con, $username); 
+ 			if($profile_user_obj->isClosed()) {
+ 				header("Location: user_closed.php");
+ 			}
 
-	<style type="text/css">
-		.wrapper {
-			margin-left: 10px;
-			padding-left: 10px;
-		}
-	</style>
-	<div class="profile_left">
-		<img src="<?php echo $user_array['profile_pic']; ?>">
-		<div class="profile_info">
-			<p><?php echo "Posts: " . $user_array['num_posts']; ?></p>
-			<p><?php echo "Likes: " . $user_array['num_likes']; ?></p>
-			<p><?php echo "Friends: " . $num_friends ?></p>
-		</div>
-		<form action="<?php echo $username; ?>" method="POST">
-			<?php
-			$profile_user_obj = new User($con, $username);
-			if ($profile_user_obj->isClosed()) {
-				header("Location: user_closed.php");
-			}
+ 			$logged_in_user_obj = new User($con, $userLoggedIn); 
 
-			$logged_in_user_obj = new User($con, $userLoggedIn);
-			//means user IS NOT on their own profile
-			if ($userLoggedIn != $username) {
+ 			if($userLoggedIn != $username) {
 
-				if ($logged_in_user_obj->isFriend($username)) {
-					echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
-				} else if ($logged_in_user_obj->didReceiveRequest($username)) {
-					echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
-				} else if ($logged_in_user_obj->didSendRequest($username)) {
-					echo '<input type="submit" name="" class="default" value="Request Sent"><br>';
-				} else
-					echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>';
-			}
+ 				if($logged_in_user_obj->isFriend($username)) {
+ 					echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
+ 				}
+ 				else if ($logged_in_user_obj->didReceiveRequest($username)) {
+ 					echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
+ 				}
+ 				else if ($logged_in_user_obj->didSendRequest($username)) {
+ 					echo '<input type="submit" name="" class="default" value="Request Sent"><br>';
+ 				}
+ 				else 
+ 					echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>';
 
+ 			}
 
-
-			?>
-</form>
+ 			?>
+ 		</form>
  		<input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something">
 
-		</form>
+    <?php  
+    if($userLoggedIn != $username) {
+      echo '<div class="profile_info_bottom">';
+        echo $logged_in_user_obj->getMutualFriends($username) . " Mutual friends";
+      echo '</div>';
+    }
 
-	</div>
-	</div>
 
-	<div class="main_column column">
-		<?php echo $username; ?>
+    ?>
+
+ 	</div>
+
+
+	<div class="profile_main_column column">
+		<div class="posts_area"></div>
+    <img id="loading" src="assets/images/icons/loading.gif">
 
 
 	</div>
@@ -92,11 +109,11 @@ if(isset($_POST['respond_request'])) {
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="postModalLabel">Post something ya hoser!~</h4>
+        <h4 class="modal-title" id="postModalLabel">Post something!</h4>
       </div>
 
       <div class="modal-body">
-      	<p>This will appear on the user's profile page and also their newsfeed in all its glory for everybody to see!!</p>
+      	<p>This will appear on the user's profile page and also their newsfeed for your friends to see!</p>
 
       	<form class="profile_post" action="" method="POST">
       		<div class="form-group">
@@ -117,8 +134,66 @@ if(isset($_POST['respond_request'])) {
 </div>
 
 
+<script>
+  var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+  var profileUsername = '<?php echo $username; ?>';
+
+  $(document).ready(function() {
+
+    $('#loading').show();
+
+    //Original ajax request for loading first posts 
+    $.ajax({
+      url: "includes/handlers/ajax_load_profile_posts.php",
+      type: "POST",
+      data: "page=1&userLoggedIn=" + userLoggedIn + "&profileUsername=" + profileUsername,
+      cache:false,
+
+      success: function(data) {
+        $('#loading').hide();
+        $('.posts_area').html(data);
+      }
+    });
+
+    $(window).scroll(function() {
+      var height = $('.posts_area').height(); //Div containing posts
+      var scroll_top = $(this).scrollTop();
+      var page = $('.posts_area').find('.nextPage').val();
+      var noMorePosts = $('.posts_area').find('.noMorePosts').val();
+
+      if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
+        $('#loading').show();
+
+        var ajaxReq = $.ajax({
+          url: "includes/handlers/ajax_load_profile_posts.php",
+          type: "POST",
+          data: "page=" + page + "&userLoggedIn=" + userLoggedIn + "&profileUsername=" + profileUsername,
+          cache:false,
+
+          success: function(response) {
+            $('.posts_area').find('.nextPage').remove(); //Removes current .nextpage 
+            $('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage 
+
+            $('#loading').hide();
+            $('.posts_area').append(response);
+          }
+        });
+
+      } //End if 
+
+      return false;
+
+    }); //End (window).scroll(function())
+
+
+  });
+
+  </script>
+
+
+
+
 
 	</div>
 </body>
-
 </html>
