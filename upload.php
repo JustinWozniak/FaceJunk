@@ -1,3 +1,4 @@
+
 <?php 
 include("includes/header.php");
 
@@ -11,7 +12,7 @@ $msg = "";
 ***********************************************************/
 	if (!isset($_POST['x']) && !isset($_FILES['image']['name']) ){
 		//Delete users temp image
-			$temppath = 'assets/images/profile_pics/'.$profile_id.'_temp.jpeg';
+			$temppath = 'assets/images/profile_pics/uploaded_profile_pics/'.$profile_id.'_temp.jpeg';
 			if (file_exists ($temppath)){ @unlink($temppath); }
 	} 
 
@@ -28,7 +29,7 @@ if(isset($_FILES['image']['name'])){
 		$ImageType = @explode('/', $_FILES['image']['type']);
 		$type = $ImageType[1]; //file type	
 	//Set Upload directory    
-		$uploaddir = $_SERVER['DOCUMENT_ROOT'].'/Gonzo/assets/images/profile_pics';
+		$uploaddir = $_SERVER['DOCUMENT_ROOT'].'/tests/Gonzo/assets/images/profile_pics/uploaded_profile_pics';
 	//Set File name	
 		$file_temp_name = $profile_id.'_original.'.md5(time()).'n'.$type; //the temp file name
 		$fullpath = $uploaddir."/".$file_temp_name; // the temp file path
@@ -41,7 +42,7 @@ if(isset($_FILES['image']['name'])){
 		if (!$move) { 
 			die ('File didnt upload');
 		} else { 
-			$imgSrc= "assets/images/profile_pics/".$file_name; // the image to display in crop area
+			$imgSrc= "assets/images/profile_pics/uploaded_profile_pics/".$file_name; // the image to display in crop area
 			$msg= "Upload Complete!";  	//message to page
 			$src = $file_name;	 		//the file name to post from cropping form to the resize		
 		} 
@@ -90,7 +91,7 @@ if (isset($_POST['x'])){
 	//the file type posted
 		$type = $_POST['type'];	
 	//the image src
-		$src = 'assets/images/profile_pics/'.$_POST['src'];	
+		$src = 'assets/images/profile_pics/uploaded_profile_pics/'.$_POST['src'];	
 		$finalname = $profile_id.md5(time());	
 	
 	if($type == 'jpg' || $type == 'jpeg' || $type == 'JPG' || $type == 'JPEG'){	
@@ -105,7 +106,7 @@ if (isset($_POST['x'])){
 			imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
 			$targ_w,$targ_h,$_POST['w'],$_POST['h']);
 		//save the new cropped version
-			imagejpeg($dst_r, "assets/images/profile_pics/".$finalname."n.jpeg", 90); 	
+			imagejpeg($dst_r, "assets/images/profile_pics/uploaded_profile_pics/".$finalname."n.jpeg", 90); 	
 			 		
 	}else if($type == 'png' || $type == 'PNG'){
 		
@@ -119,7 +120,7 @@ if (isset($_POST['x'])){
 			imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
 			$targ_w,$targ_h,$_POST['w'],$_POST['h']);
 		//save the new cropped version
-			imagejpeg($dst_r, "assets/images/profile_pics/".$finalname."n.jpeg", 90); 	
+			imagejpeg($dst_r, "assets/images/profile_pics/uploaded_profile_pics/".$finalname."n.jpeg", 90); 	
 						
 	}else if($type == 'gif' || $type == 'GIF'){
 		
@@ -133,7 +134,7 @@ if (isset($_POST['x'])){
 			imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
 			$targ_w,$targ_h,$_POST['w'],$_POST['h']);
 		//save the new cropped version
-			imagejpeg($dst_r, "assets/images/profile_pics/".$finalname."n.jpeg", 90); 	
+			imagejpeg($dst_r, "assets/images/profile_pics/uploaded_profile_pics/".$finalname."n.jpeg", 90); 	
 		
 	}
 		//free up memory
@@ -142,7 +143,7 @@ if (isset($_POST['x'])){
 			@ unlink($src); // delete the original upload					
 		
 		//return cropped image to page	
-		$result_path ="assets/images/profile_pics/".$finalname."n.jpeg";
+		$result_path ="assets/images/profile_pics/uploaded_profile_pics/".$finalname."n.jpeg";
 
 		//Insert image into database
 		$insert_pic_query = mysqli_query($con, "UPDATE users SET profile_pic='$result_path' WHERE username='$userLoggedIn'");

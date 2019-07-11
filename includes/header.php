@@ -32,8 +32,9 @@ if (isset($_SESSION['username'])) {
   <script src="assets/js/bootbox.min.js"></script>
   <script src="./assets/js/bootstrap.js"></script>
   <script src="assets/js/gonzo.js"></script>
+  <script src="assets/js/jcrop_bits.js"></script>
   <script src="assets/js/jquery.jcrop.js"></script>
-	<script src="assets/js/jcrop_bits.js"></script>
+
 
   <!-- css things -->
   <script src="https://kit.fontawesome.com/7e196638a2.js"></script>
