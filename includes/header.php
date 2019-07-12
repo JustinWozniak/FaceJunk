@@ -49,12 +49,12 @@ if (isset($_SESSION['username'])) {
   </a>
 
   <nav>
-    <a href="<?php echo $userLoggedIn; ?>">
+    <a href="<?php echo $userLoggedIn; ?>" title='My Profile'>
       <?php echo $user['first_name']; ?>
     </a>
     <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Home'></i> </a>
-    <a href="#"><i class="fas fa-bullhorn" title='Notifications'></i> </a>
-    <a href="#"><i class="fas fa-skull-crossbones" title='Messages'></i> </a>
+    <a href="#"><i class="fas fa-skull-crossbones" title='Notifications'></i> </a>
+    <a href="messages.php"><i class="fas fa-bullhorn" title='Messages'></i> </a>
     <a href="requests.php"><i class="fas fa-frog" title='Users'></i> </a>
     <a href="assets/bathroomwall/chatapp.php"><i class="fas fa-restroom" title='Bathroom Wall'></i> </a>
     <a href="#"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
