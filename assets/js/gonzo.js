@@ -20,3 +20,10 @@ $(document).ready(function() {
 
 
 });
+
+//looks for users in searchbar in messages page
+function getUsers(value, user) {
+	$.post("includes/handlers/ajax_friend_search.php", {query:value, userLoggedIn:user}, function(data) {
+		$(".results").html(data);
+	});
+}
