@@ -76,7 +76,7 @@ a:hover {
     min-width: 950px;
     display: block;
     border-width: 3px;
-    background-color: #000000;
+    /* background-color: #000000; */
 }
 
 .column {
@@ -344,3 +344,5 @@ hr {
 	margin: 10 0 0 7px;
 
 }
+
+
