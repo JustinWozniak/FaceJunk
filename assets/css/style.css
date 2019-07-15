@@ -458,13 +458,13 @@ h4	{
 
 .dropdown_data_window {
     background-color: #fff;
-    border: 1px solid #DADADA;
+    border: 1px solid black;
     border-radius: 0 0 8px 8px;
     border-top: none;
-    width: 300px;
+    width: 250px;
     position: absolute;
     right: 10px;
-    top: 40px;
+    top: 120px;
     overflow: scroll;
 }
 
