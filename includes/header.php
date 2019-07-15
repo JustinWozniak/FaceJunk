@@ -27,7 +27,7 @@ if (isset($_SESSION['username'])) {
   <meta name="description" content="" />
   <title>Gonzo---A Social Network For All Us Freaks!~~</title>
 
-<!-- 
+  <!-- 
   Javascript includes.... -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="assets/js/bootbox.min.js"></script>
@@ -54,17 +54,23 @@ if (isset($_SESSION['username'])) {
     </a>
     <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Home'></i> </a>
     <a href="#"><i class="fas fa-skull-crossbones" title='Notifications'></i> </a>
-    <a href="messages.php"><i class="fas fa-bullhorn" title='Messages'></i> </a>
+    <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
+				<i class="fas fa-bullhorn"></i>
+
+			</a>
     <a href="requests.php"><i class="fas fa-frog" title='Users'></i> </a>
     <a href="assets/bathroomwall/chatapp.php"><i class="fas fa-restroom" title='Bathroom Wall'></i> </a>
     <a href="#"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
     <a href="includes/handlers/logout.php"><i class="fas fa-heart-broken" title='Log Out'></i> </a>
   </nav>
+
+  <div class="dropdown_data_window" style="height:0px; border:none;"></div>
+  <input type="hidden" id="dropdown_data_type" value="">
   </div>
   </div>
 
-<div class="wrapper">
+  <div class="wrapper">
 
-  </body>
+    </body>
 
 </html>
