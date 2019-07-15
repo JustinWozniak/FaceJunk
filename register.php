@@ -16,8 +16,8 @@ require 'includes/form_handlers/login_handler.php';
 <body>
 <img src="./assets/images/logos/Gonzo logo.jpg" class="logo1">
 <div id="first">
-	<form action="register.php" method="POST" class="registerForm">
-		<input type="email" name="log_email" placeholder="Email Address" value="<?php 
+	<form action="register.php" method="POST" class="registerForm" autocomplete="on">
+		<input type="email" autocomplete="on" name="log_email" placeholder="Email Address"  value="<?php 
 		if(isset($_SESSION['log_email'])) {
 			echo $_SESSION['log_email'];
 		} 
