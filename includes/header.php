@@ -50,23 +50,32 @@ if (isset($_SESSION['username'])) {
   </a>
 
   <nav>
-  <?php
-				//Unread messages 
-				$messages = new Message($con, $userLoggedIn);
-				$num_messages = $messages->getUnreadNumber();
-			?>
+    <?php
+    //Unread messages 
+    $messages = new Message($con, $userLoggedIn);
+    $num_messages = $messages->getUnreadNumber();
+
+    //Unread notifications 
+    $notifications = new Notification($con, $userLoggedIn);
+    $num_notifications = $notifications->getUnreadNumber();
+    ?>
     <a href="<?php echo $userLoggedIn; ?>" title='My Profile'>
       <?php echo $user['first_name']; ?>
     </a>
-    <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Home'></i> </a>
-    <a href="#"><i class="fas fa-skull-crossbones" title='Notifications'></i> </a>
+    <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Notifications'></i> </a>
+    <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')">
+      <?php
+      if ($num_notifications > 0)
+        echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
+      ?>
+    </a>
     <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
-				<i class="fas fa-bullhorn" ></i>
-        <?php
-				if($num_messages > 0)
-				 echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
-				?>
-			</a>
+      <i class="fas fa-bullhorn"></i>
+      <?php
+      if ($num_messages > 0)
+        echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
+      ?>
+    </a>
     <a href="requests.php"><i class="fas fa-frog" title='Users'></i> </a>
     <a href="assets/bathroomwall/chatapp.php"><i class="fas fa-restroom" title='Bathroom Wall'></i> </a>
     <a href="#"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
@@ -76,54 +85,53 @@ if (isset($_SESSION['username'])) {
   <input type="hidden" id="dropdown_data_type" value="">
   </div>
 
-	<script>
-	var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+  <script>
+    var userLoggedIn = '<?php echo $userLoggedIn; ?>';
 
-	$(document).ready(function() {
+    $(document).ready(function() {
 
-$('.dropdown_data_window').scroll(function() {
-  let inner_height = $('.dropdown_data_window').innerHeight(); //Div containing data
-  let scroll_top = $('.dropdown_data_window').scrollTop();
-  let page = $('.dropdown_data_window').find('.nextPageDropdownData').val();
-  let noMoreData = $('.dropdown_data_window').find('.noMoreDropdownData').val();
+      $('.dropdown_data_window').scroll(function() {
+        let inner_height = $('.dropdown_data_window').innerHeight(); //Div containing data
+        let scroll_top = $('.dropdown_data_window').scrollTop();
+        let page = $('.dropdown_data_window').find('.nextPageDropdownData').val();
+        let noMoreData = $('.dropdown_data_window').find('.noMoreDropdownData').val();
 
-  if ((scroll_top + inner_height >= $('.dropdown_data_window')[0].scrollHeight) && noMoreData == 'false') {
+        if ((scroll_top + inner_height >= $('.dropdown_data_window')[0].scrollHeight) && noMoreData == 'false') {
 
-    let pageName; //Holds name of page to send ajax request to
-    let type = $('#dropdown_data_type').val();
-
-
-    if(type == 'notification')
-      pageName = "ajax_load_notifications.php";
-    else if(type = 'message')
-      pageName = "ajax_load_messages.php"
+          let pageName; //Holds name of page to send ajax request to
+          let type = $('#dropdown_data_type').val();
 
 
-      let ajaxReq = $.ajax({
-      url: "includes/handlers/" + pageName,
-      type: "POST",
-      data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
-      cache:false,
-
-      success: function(response) {
-        $('.dropdown_data_window').find('.nextPageDropdownData').remove(); //Removes current .nextpage 
-        $('.dropdown_data_window').find('.noMoreDropdownData').remove(); //Removes current .nextpage 
+          if (type == 'notification')
+            pageName = "ajax_load_notifications.php";
+          else if (type = 'message')
+            pageName = "ajax_load_messages.php"
 
 
-        $('.dropdown_data_window').append(response);
-      }
+          let ajaxReq = $.ajax({
+            url: "includes/handlers/" + pageName,
+            type: "POST",
+            data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
+            cache: false,
+
+            success: function(response) {
+              $('.dropdown_data_window').find('.nextPageDropdownData').remove(); //Removes current .nextpage 
+              $('.dropdown_data_window').find('.noMoreDropdownData').remove(); //Removes current .nextpage 
+
+
+              $('.dropdown_data_window').append(response);
+            }
+          });
+
+        } //End if 
+
+        return false;
+
+      }); //End (window).scroll(function())
+
+
     });
-
-  } //End if 
-
-  return false;
-
-}); //End (window).scroll(function())
+  </script>
 
 
-});
-
-</script>
-
-
-<div class="wrapper">
+  <div class="wrapper">
