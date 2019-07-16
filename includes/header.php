@@ -50,33 +50,46 @@ if (isset($_SESSION['username'])) {
   </a>
 
   <nav>
-    <?php
-    //Unread messages 
-    $messages = new Message($con, $userLoggedIn);
-    $num_messages = $messages->getUnreadNumber();
+  <?php
+				//Unread messages 
+				$messages = new Message($con, $userLoggedIn);
+				$num_messages = $messages->getUnreadNumber();
 
-    //Unread notifications 
-    $notifications = new Notification($con, $userLoggedIn);
-    $num_notifications = $notifications->getUnreadNumber();
-    ?>
+				//Unread notifications 
+				$notifications = new Notification($con, $userLoggedIn);
+				$num_notifications = $notifications->getUnreadNumber();
+
+				//Unread notifications 
+				$user_obj = new User($con, $userLoggedIn);
+				$num_requests = $user_obj->getNumberOfFriendRequests();
+			?>
     <a href="<?php echo $userLoggedIn; ?>" title='My Profile'>
       <?php echo $user['first_name']; ?>
     </a>
-    <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Notifications'></i> </a>
-    <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')">
-      <?php
-      if ($num_notifications > 0)
-        echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
-      ?>
-    </a>
+    <!-- "title" is passed to Gonzo.js so it knows wich dropdown to show -->
+    <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Newsfeed'></i> </a>
+  	<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')">
+				<i class="fas fa-skull-crossbones" title='Notifications'></i>
+				<?php
+				if($num_notifications > 0)
+				 echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
+				?>
+			</a>
     <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
-      <i class="fas fa-bullhorn"></i>
+      <i class="fas fa-bullhorn" title="Messages"></i>
       <?php
       if ($num_messages > 0)
         echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
       ?>
     </a>
-    <a href="requests.php"><i class="fas fa-frog" title='Users'></i> </a>
+    <a href="requests.php">
+				<i class="fas fa-frog"></i>
+				<?php
+				if($num_requests > 0)
+				 echo '<span class="notification_badge" id="unread_requests">' . $num_requests . '</span>';
+				?>
+			</a>
+			<a href="#">
     <a href="assets/bathroomwall/chatapp.php"><i class="fas fa-restroom" title='Bathroom Wall'></i> </a>
     <a href="#"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
     <a href="includes/handlers/logout.php"><i class="fas fa-heart-broken" title='Log Out'></i> </a>
