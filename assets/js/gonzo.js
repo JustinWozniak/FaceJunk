@@ -78,7 +78,7 @@ function getDropdownData(user, type) {
 
 
 function getLiveSearchUsers(value, user) {
-// data is the value returned from the ajax call, used to determin what results to show
+
 	$.post("includes/handlers/ajax_search.php", {query:value, userLoggedIn: user}, function(data) {
 
 		if($(".search_results_footer_empty")[0]) {
@@ -98,4 +98,25 @@ function getLiveSearchUsers(value, user) {
 	});
 
 }
+
+
+// This function closes dropdown menus when you click off them
+$(document).click(function(e){
+
+	if(e.target.class != "search_results" && e.target.id != "search_text_input") {
+
+		$(".search_results").html("");
+		$('.search_results_footer').html("");
+		$('.search_results_footer').toggleClass("search_results_footer_empty");
+		$('.search_results_footer').toggleClass("search_results_footer");
+	}
+
+	if(e.target.className != "dropdown_data_window") {
+
+		$(".dropdown_data_window").html("");
+		$(".dropdown_data_window").css({"padding" : "0px"});
+	}
+
+
+});
 
