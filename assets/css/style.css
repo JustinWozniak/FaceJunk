@@ -515,11 +515,11 @@ h4	{
 
 
 
-.search_text_input {
+#search_text_input {
 	border:2px solid  red;
   	float: left;
   	height: 30px;
-  	width: 250px;
+  	width: 60px;
   	border-top-right-radius: 0;
   	border-bottom-right-radius: 0;
   	border-top-left-radius: 3px;
