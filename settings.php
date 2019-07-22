@@ -2,7 +2,8 @@
 include("includes/header.php");
 include("includes/form_handlers/settings_handler.php");
 ?>
-
+ <body class="mainview">
+ <script src="./assets/js/wallpaper.js"></script>
 <div class="main_column column">
 
 	<h4>Account Settings</h4>
@@ -10,7 +11,7 @@ include("includes/form_handlers/settings_handler.php");
 	echo "<img src='" . $user['profile_pic'] . "' id='small_profile_pics'>";
 	?>
 	<br>
-	<a href="upload.php">Upload new profile picture</a> <br><br><br>
+	<a href="upload.php" class="accountSettingText">Upload new profile picture</a> <br><br><br>
 
 	Modify the values and click 'Update Details'
 
@@ -48,3 +49,4 @@ include("includes/form_handlers/settings_handler.php");
 
 
 </div>
+ </body>
