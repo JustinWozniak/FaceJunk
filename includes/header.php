@@ -100,7 +100,7 @@ if (isset($_SESSION['username'])) {
       ?>
     </a>
     <a href="requests.php">
-      <i class="fas fa-frog"></i>
+      <i class="fas fa-frog" title="Friend Requests"></i>
       <?php
       if ($num_requests > 0)
         echo '<span class="notification_badge" id="unread_requests">' . $num_requests . '</span>';
@@ -108,7 +108,7 @@ if (isset($_SESSION['username'])) {
     </a>
     <a href="#">
       <a href="assets/bathroomwall/chatapp.php"><i class="fas fa-restroom" title='Bathroom Wall'></i> </a>
-      <a href="#"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
+      <a href="settings.php"><i class="fas fa-hat-wizard" title='Settings'></i> </a>
       <a href="includes/handlers/logout.php"><i class="fas fa-heart-broken" title='Log Out'></i> </a>
   </nav>
 
