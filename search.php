@@ -111,7 +111,7 @@ else {
 
 
 					<div class='result_profile_pic'>
-						<a href='" . $row['username'] ."'><img src='". $row['profile_pic'] ."';'></a>
+						<a href='" . $row['username'] ."'><img src='". $row['profile_pic'] ."'class='result_profile_pic';'></a>
 					</div>
 
 						<a href='" . $row['username'] ."'> " . $row['first_name'] . " " . $row['last_name'] . "
