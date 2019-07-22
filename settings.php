@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("includes/header.php");
 include("includes/form_handlers/settings_handler.php");
 ?>
@@ -7,7 +7,7 @@ include("includes/form_handlers/settings_handler.php");
 
 	<h4>Account Settings</h4>
 	<?php
-	echo "<img src='" . $user['profile_pic'] ."' id='small_profile_pics'>";
+	echo "<img src='" . $user['profile_pic'] . "' id='small_profile_pics'>";
 	?>
 	<br>
 	<a href="upload.php">Upload new profile picture</a> <br><br><br>
@@ -35,9 +35,9 @@ include("includes/form_handlers/settings_handler.php");
 
 	<h4>Change Password</h4>
 	<form action="settings.php" method="POST">
-		Old Password: <input type="password" name="old_password" ><br>
-		New Password: <input type="password" name="new_password_1" ><br>
-		New Password Again: <input type="password" name="new_password_2" ><br>
+		Old Password: <input type="password" name="old_password"><br>
+		New Password: <input type="password" name="new_password_1"><br>
+		New Password Again: <input type="password" name="new_password_2"><br>
 		<input type="submit" name="update_password" id="save_details" value="Update Password"><br>
 	</form>
 
