@@ -16,19 +16,19 @@ if(isset($_POST['close_account'])) {
 
 <div class="main_column column">
 
-	<h4>Close Account</h4>
-	
+	<h4 class="newOrleans">Close Account</h4>
+	<h4 class="newOrleans">
 			。　☆ 。　　☆。　　☆ 
-★。　＼　　｜　　／。　★。　☆ 。　　☆。　　☆ 
-		　　Baby please don't go<br>
+★。　＼　　｜　　／。　★。　☆ 。　　☆。　　☆ <br><br><br>
+		Baby please don't go<br>
 			Baby please don't go<br>
 			Baby please don't go <br>
 			Down to New Orleans<br>
 			You know I love you so<br>
-			Baby please don't go!!!!!<br>
+			Baby please don't go!!!!!<br><br><br>
 			★。　／　　｜　　＼。　★ 
 			。　☆。 　　。　　☆。
-
+</h4>
 
 			<br><br><br><br>
 	Are you sure you want to close your account?<br><br>
@@ -194,7 +194,7 @@ ___________________________`8,___-I8'
 ____________________________`8,,--I8 
 _____________________________`Ib,,I8 
 ______________________________`I8I
-
+<br><br><br>
 	<form action="close_account.php" method="POST">
 		<input type="submit" name="close_account" id="close_account" value="Yes! Close it!" class="danger settings_submit">
 		<input type="submit" name="cancel" id="update_details" value="No way!" class="info settings_submit">
