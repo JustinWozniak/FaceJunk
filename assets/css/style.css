@@ -343,6 +343,7 @@ hr {
     width: 70%;
     z-index: -1;
     border: 3px solid rgb(0, 0, 0);
+    visibility: visible;
 }
 
 .profile_info_bottom {
@@ -643,3 +644,7 @@ h4 {
     text-align: center;
 }
   
+
+.tabClass   {
+    margin:20px;
+}
