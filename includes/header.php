@@ -44,7 +44,7 @@ if (isset($_SESSION['username'])) {
   <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css"">
   <link rel=" stylesheet" type="text/css" href="./assets/css/style.css"">
   </head>
-  <body>
+
 <div class=" top_bar">
   <img src="assets/images/logos/Gonzo logo.jpg" alt="logo" class="headerLogo">
   </a>
