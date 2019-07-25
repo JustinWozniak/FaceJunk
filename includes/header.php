@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="description" content="" />
-  <title>Gonzo---A Social Network For All Us Freaks!~~</title>
+  <title>Starfukkers!!!!!~</title>
 
   <!-- 
   Javascript includes.... -->
@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
   </head>
 
 <div class=" top_bar">
-  <img src="assets/images/logos/Gonzo logo.jpg" alt="logo" class="headerLogo">
+  <img src="assets/images/logos/starfukkers2.png" alt="logo" class="headerLogo">
   </a>
 
   <div class="search">

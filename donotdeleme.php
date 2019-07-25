@@ -1,3 +1,5 @@
+RENAME THIS FORM TO register.php TO MAKE IT WORK
+
 
 <?php  
 require 'config/config.php';
@@ -15,7 +17,7 @@ require 'includes/form_handlers/login_handler.php';
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
-<img src="./assets/images/logos/starfukkers2.png" class="logo1">
+<img src="./assets/images/logos/starfuckkers2.png" class="logo1">
 <div id="first">
 	<form action="register.php" method="POST" class="registerForm" autocomplete="on">
 		<input type="email" autocomplete="on" name="log_email" placeholder="Email Address"  value="<?php 

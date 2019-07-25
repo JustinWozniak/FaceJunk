@@ -30,10 +30,10 @@ try {
 
 	$mail->setFrom('rockabillyriot@hotmail.com', 'Justin Wozniak');
 	$mail->addAddress($emailAddress['email'], 'Emperor');
-	$mail->Subject = 'Gonzo---A Social Network For All Us Freaks!~';
+	$mail->Subject = 'Starfukkers!~';
 
 	$mail->isHTML(TRUE);
-	$mail->Body = '<html>Welcome to the <strong>Gonzo</strong> social network!!!.<br>
+	$mail->Body = '<html>Welcome to Starfukkers!!!!!!.<br>
 		I started this project in June 2019 and its been growing ever since!!!!!<br>
 		Anything goes so watch out!<br>
 		Freedom of speech is pushed hard here, but harassment of any kind will not be tolerated....
@@ -49,14 +49,14 @@ try {
 		ALSO....I DO NOT HAVE ACCESS TO YOUR PASSWORDS!!!!!!!! And havent implimented a forgotten password page....yet.<br>
 		If you forget your password you will need to have your account deleted if you want to make a new account with the same e-mail.<br><BR>
 		With all that being said, Im open to any ideas anybody has on making this experience better...I am new to 
-		all this programming, but as i continue to grow, I hope Gonzo does as well.<br><br><br>
+		all this programming, but as i continue to grow, I hope Starfukkers does as well.<br><br><br>
 		****THIS IS A LEGAL MUMBLEJUMBLE DOCUMENT....BY SIGNING IN YOU AGREE TO NOT SUE ME FOR ANYTHING THAT COMES
 		FROM THIS SITE*****<br><br><br>
 		Thanks for signing up, ENJOY!!!!<br>
 		----------Justin Wozniak......President, Owner, Stoner, Beer Drinker, gorgeous, programmer mastermind, FUCKIN ROCKSTAR FROM ANOTHER GALAXY, Guitar bender, HUNTER S.THOMPSON FANATIC, rambler on of words ;)<br><br>
 		Crazy is a term of art; Insane is a term of law. Remember that, and you will save yourself a lot of trouble....Hunter S. Thompson';
 	$mail->AltBody = 'You better take care of me Lord, if you dont youre gonna have me on your hands.';
-	$mail->addAttachment('C:\xampp\htdocs\tests\Gonzo\assets\images\logos\Gonzo logo.jpg', 'We cant stop here....');
+	$mail->addAttachment('C:\xampp\htdocs\tests\Gonzo\assets\images\s\starfuckkers.jpg', 'We cant stop here....');
 	$mail->isSMTP();
 	$mail->Host = 'smtp.gmail.com';
 	$mail->SMTPAuth = TRUE;
@@ -82,7 +82,7 @@ try {
 <html>
 
 <head>
-	<title>Gonzo---A Social Network For All Us Freaks!~</title>
+	<title>Starfukkers!!!!~</title>
 	<link rel="stylesheet" type="text/css" href="./success_style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
