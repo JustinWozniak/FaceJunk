@@ -96,12 +96,17 @@ input[type=text], select, textarea {
   padding:10px;
   width:95%;
   border-radius: 30%;
-  color: rgb(18,4,46);
+  color: rgb(240, 18, 155);
   outline: 3px black;
   font-size: 50px;
- 
-
   }
+
+  @media only screen and (min-width: 375px) {
+    /* For desktop: */
+    .registerForm h3 {
+    font-size: 40px;
+    
+    }
 
   .signupForm {
     border-style: solid;
@@ -137,4 +142,4 @@ input[type=text], select, textarea {
       width:100%;
     }
    
-  }
+  }}

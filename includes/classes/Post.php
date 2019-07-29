@@ -28,7 +28,7 @@ class Post
 
 					$link = preg_split("!&!", $value);
 					$value = preg_replace("!watch\?v=!", "embed/", $link[0]);
-					$value = "<br><iframe width=\'420\' height=\'315\' src=\'" . $value ."\'></iframe><br>";
+					$value = '<br><iframe id="youtubeIFrame" src=\'" . $value ."\'></iframe><br>';
 					$body_array[$key] = $value;
 
 				}
