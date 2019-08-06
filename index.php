@@ -55,7 +55,10 @@ if(isset($_POST['post'])){
    <meta charset="utf-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta content="width=device-width, initial-scale=1" name="viewport" />
+<<<<<<< HEAD
    <link href="https://fonts.googleapis.com/css?family=Anaheim"rel="stylesheet">
+=======
+>>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
    <meta name="description" content="" />
    <script src="assets/js/infinitScroll.js"></script>
  </head>
