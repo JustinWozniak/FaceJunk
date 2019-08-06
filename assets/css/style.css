@@ -11,12 +11,8 @@
 @media screen and (max-width: 376px) {
     .headerLogo {
         width: 100%;
-<<<<<<< HEAD
         height: 60%;
         position: absolute;
-=======
-        height: 75%;
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
     }
 }
 
@@ -31,12 +27,8 @@ nav {
 
 @media only screen and (max-width: 376px) {
     nav {
-<<<<<<< HEAD
         padding-top: 100px;
         margin-right: 60px;
-=======
-        padding-top: 90px;
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
     }
 }
 
@@ -88,10 +80,7 @@ a {
 }
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 .logo a {
     font-family: 'Bellota-BoldItalic', sans-serif;
     margin-left: 10px;
@@ -128,12 +117,8 @@ a:hover {
         width: 90%;
         display: block;
         border-width: 3px;
-<<<<<<< HEAD
         background-color: white;
         text-align: center;
-=======
-        background-color: #000000;
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
     }
 }
 
@@ -147,19 +132,11 @@ a:hover {
 }
 
 .user_details {
-<<<<<<< HEAD
     width: 220px;
     float: left;
     margin-bottom: 20px;
     border: 3px solid rgb(0, 0, 0);
     height:250px;
-=======
-    width: 200px;
-    float: left;
-    margin-bottom: 20px;
-    border: 3px solid rgb(0, 0, 0);
-    height: 210px;
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 }
 
 
@@ -172,26 +149,16 @@ a:hover {
 @media screen and (max-width: 376px) {
     .user_details {
         text-align: center;
-<<<<<<< HEAD
         height: 280px;
-=======
-        height: 270px;
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
         border-radius: 5px;
         margin-right: 10px;
         padding-right: 40px;
         padding-left: 15px;
         width: 260px;
-<<<<<<< HEAD
         margin-top: 20px;
     }
 }
 
-=======
-
-    }
-}
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 @media screen and (max-width: 376px) {
     .user_details img {
         height: 190px;
@@ -227,20 +194,10 @@ a:hover {
 @media screen and (max-width: 376px) {
     .main_column {
         float: right;
-<<<<<<< HEAD
         padding-bottom: 10px;
         width: 109%;
         z-index: -1;
         min-height: 200px;
-=======
-
-        width: 109%;
-
-        z-index: -1;
-
-        min-height: 200px;
-
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
         border: 3px solid rgb(0, 0, 0);
     }
 }
@@ -264,10 +221,7 @@ a:hover {
     .post_form textarea {
         width: 80%;
         font-size: 17px;
-<<<<<<< HEAD
         margin-left: -55px;
-=======
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
     }
 }
 
@@ -384,15 +338,6 @@ hr {
     }
 }
 
-<<<<<<< HEAD
-=======
-@media screen and (max-width: 376px) {
-    .newsfeedPostOptions {
-        border: 3px solid black;
-    }
-}
-
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 
 .newsfeedPostOptions iframe {
     border: 0;
@@ -414,22 +359,17 @@ hr {
     border: 2px solid rgb(0, 0, 0);
     font-size: 14px;
     color: #000000;
-<<<<<<< HEAD
     margin-left: 270px;
 }
 @media screen and (max-width: 376px) {
     .comment_like {
         margin-left: 30px;
     }
-=======
-
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 }
 
 .like_value {
     display: inline;
     font-size: 14px;
-<<<<<<< HEAD
     margin-left: 270px;
 }
 
@@ -438,9 +378,6 @@ hr {
       display: block;
       margin-left: 40px;
     }
-=======
-
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 }
 
 
@@ -462,15 +399,10 @@ hr {
 @media screen and (max-width: 376px) {
     .profile_left {
         width: 100%;
-<<<<<<< HEAD
         margin-top: 20px;
         color: #CBEAF8;
         margin-left: 70px;
         padding-top:10px;
-=======
-        color: #CBEAF8;
-        margin-left: 70px;
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
     }
 }
 
@@ -488,12 +420,6 @@ hr {
     background-color: #16222b;
     width: 100%;
     padding: 10px 0;
-}
-@media screen and (max-width: 376px) {
-    .profile_info {
-       text-align: center;
-       
-    }
 }
 
 @media screen and (max-width: 376px) {
@@ -575,14 +501,8 @@ hr {
 }
 @media screen and (max-width: 376px) {
     .profile_main_column {
-<<<<<<< HEAD
         margin-left: 20px;
         width: 100%;
-=======
-        width: 100%;
-        margin-left: 20px;
-       
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
     }
 }
 
@@ -681,8 +601,8 @@ h4 {
 
 @media screen and (max-width: 376px) {
     .user_found_messages img {
-        width: 100px;
-        height: 50px;
+        /* width: 100px;
+        height: 50px; */
         border-radius: 5px;
         margin-left: 10px;
     }
@@ -905,28 +825,14 @@ h4 {
 
 .postedImage img {
     max-height: 300px;
-<<<<<<< HEAD
 max-width: 100%;
 
 margin: 5px auto;
     margin-top: 5px;
 margin-top: 20px;
-=======
-    max-width: 100%;
-    display: block;
-    margin: 5px auto;
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
-}
-@media screen and (max-width: 376px) {
-    .postedImage img {
-        padding-top: 20px;
-    }
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 #fileToUpload {
     width: 80%;
     height: 35px;
@@ -953,20 +859,6 @@ margin-top: 20px;
 
 iframe:focus {
     outline: none;
-<<<<<<< HEAD
-=======
-}
-
-iframe[seamless] {
-    display: block;
-}
-
-
-@media screen and (max-width: 376px) {
-    #youtubeIFrame {
-        width: 10%;
-    }
->>>>>>> 38e30ecb34bc83bdaa527f9ba8502ca377976709
 }
 
 iframe[seamless] {
