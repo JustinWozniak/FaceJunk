@@ -9,7 +9,7 @@ require 'includes/form_handlers/login_handler.php';
 
 <html class="mainview">
 <head>
-	<title>Starfukkers!~</title>
+	<title>StarfüKkers!~</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
 	<script src="./assets/js/wallpaper.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

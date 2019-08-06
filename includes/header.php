@@ -24,9 +24,9 @@ if (isset($_SESSION['username'])) {
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <meta name="description" content="" />
-  <title>Starfukkers!!!!!~</title>
+  <title>StarfüKkers!!!!!~</title>
 
   <!-- 
   Javascript includes.... -->
@@ -84,6 +84,7 @@ if (isset($_SESSION['username'])) {
       <?php echo $user['first_name']; ?>
     </a>
     <!-- "title" is passed to Gonzo.js so it knows wich dropdown to show -->
+    <a href="home.php"><i class="fas fa-toilet-paper" title='Home/Updates'></i> </a>
     <a href="index.php"><i class="fas fa-meh-rolling-eyes" title='Newsfeed'></i> </a>
     <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')">
       <i class="fas fa-skull-crossbones" title='Notifications'></i>

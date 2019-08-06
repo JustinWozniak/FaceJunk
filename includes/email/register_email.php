@@ -33,28 +33,12 @@ try {
 	$mail->Subject = 'Starfukkers!~';
 
 	$mail->isHTML(TRUE);
-	$mail->Body = '<html>Welcome to Starfukkers!!!!!!.<br>
-		I started this project in June 2019 and its been growing ever since!!!!!<br>
-		Anything goes so watch out!<br>
-		Freedom of speech is pushed hard here, but harassment of any kind will not be tolerated....
-		All comments on posts are anonomous, so be aware....
-		Apon sign in you will be given one of TWENTY random pictures for your profile pic. May be a rockstar, a celebrity....who knows??? But feel free to change it....and if your bored with the background, just hit refresh...<br>
-		Theres ONE HUNDRED random ones that will be shown.<br>
-		If your bored, stop by the Bathroom Wall and leave a random word of wisdom, or upload your favorite picture for others to see. This section
-		is also completley anonymous, so nobody will ever know what you posted.<br><br>
-
-		******WARNING********<br><br>
-		
-		This site HAS NOT been optimized in any way whatsoever so, it may be best to stick to using it over wi-fi for the start. I am not responsible for you using 10 gigs of data!<br>
-		ALSO....I DO NOT HAVE ACCESS TO YOUR PASSWORDS!!!!!!!! And havent implimented a forgotten password page....yet.<br>
-		If you forget your password you will need to have your account deleted if you want to make a new account with the same e-mail.<br><BR>
-		With all that being said, Im open to any ideas anybody has on making this experience better...I am new to 
-		all this programming, but as i continue to grow, I hope Starfukkers does as well.<br><br><br>
-		****THIS IS A LEGAL MUMBLEJUMBLE DOCUMENT....BY SIGNING IN YOU AGREE TO NOT SUE ME FOR ANYTHING THAT COMES
-		FROM THIS SITE*****<br><br><br>
-		Thanks for signing up, ENJOY!!!!<br>
-		----------Justin Wozniak......President, Owner, Stoner, Beer Drinker, gorgeous, programmer mastermind, FUCKIN ROCKSTAR FROM ANOTHER GALAXY, Guitar bender, HUNTER S.THOMPSON FANATIC, rambler on of words ;)<br><br>
-		Crazy is a term of art; Insane is a term of law. Remember that, and you will save yourself a lot of trouble....Hunter S. Thompson';
+	$mail->Body = '<html>Welcome to StarfüKkers!!!!!!.<br>
+	FUCKING RIGHT!<br>
+	Congratulations on the invite, and Welcome to StarfüKkers!!!!<br>
+	An adult Social Network!<br>
+	Please make your way to ----------------- and sign in with the password your given.<br>
+	When you first land, make your way over to the Rules/Updates page to get the lowdown on everything!';
 	$mail->AltBody = 'You better take care of me Lord, if you dont youre gonna have me on your hands.';
 	$mail->addAttachment('C:\xampp\htdocs\tests\Gonzo\assets\images\s\starfuckkers.jpg', 'We cant stop here....');
 	$mail->isSMTP();

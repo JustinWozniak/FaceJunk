@@ -1,2 +1,4 @@
 # ignore folder called 'uploaded_profile_pics' assets\images\profile_pics\uploaded_profile_pics
 assets/images/posts/
+
+# ignore file called 'homelogo.png' assets\images\logos\homelogo.png
