@@ -140,6 +140,12 @@ h1 {
 .homelogo {
     color: white;
 }
+@media(max-width:740px) {
+    .homelogo {
+        color: black;
+    }
+
+}
 #welcome-section {
     background: url("assets/images/logos/homelogo.png");
     width: 100%;
@@ -298,6 +304,26 @@ html {
     }
 }
 
+#search_text_input {
+    border: 2px solid red;
+    float: left;
+    height: 30px;
+    width: 55px;
+    padding: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 376px) {
+    #search_text_input {
+     
+ 
+       visibility: visible;
+    }
+}
 
 
 .text-centerMain h3 {

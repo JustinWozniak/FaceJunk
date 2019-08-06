@@ -49,6 +49,8 @@ if(isset($_POST['post'])){
 
 
  ?>
+ <body class="mainview">
+  <script src="./assets/js/wallpaper.js"></script>
 	<div class="user_details column">
 		<a href="<?php echo $userLoggedIn; ?>">  <img src="<?php echo $user['profile_pic']; ?>"> </a>
 
@@ -90,7 +92,7 @@ if(isset($_POST['post'])){
 
 		<div class="trends">
 			<?php 
-			$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
+			$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 5");
 
 			foreach ($query as $row) {
 				
@@ -112,7 +114,7 @@ if(isset($_POST['post'])){
 
 
 	</div>
-
+		</body>
 
 
 
