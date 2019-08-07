@@ -15,7 +15,7 @@ require 'includes/form_handlers/login_handler.php';
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
-<img src="./assets/images/logos/starstar.png" class="logo1">
+<img src="./assets/images/logos/starfukkers4.png" class="logo1">
 <div id="first">
 	<form action="register.php" method="POST" class="registerForm" autocomplete="on">
 		<input type="email" autocomplete="on" name="log_email" placeholder="Email Address"  value="<?php 
@@ -29,10 +29,10 @@ require 'includes/form_handlers/login_handler.php';
 		<?php if(in_array("Email or password was incorrect<br>", $error_array)) echo  "Email or password was incorrect<br>"; ?>
 		<input type="submit" name="login_button" value="Login">
 		<br>
-		<!-- <h3 class="signup">Registrations are closed, try again next year</h3> -->
-		<a href="#" id="signup" class="signup">Need an account? Register here!</a>
+		<h3 class="signup">Registrations are closed, try again next year</h3>
+		<!-- <a href="#" id="signup" class="signup">Need an account? Register here!</a> -->
 	</form>
-</div>
+<!-- </div>
 <div id="second">
 	<form action="register.php" method="POST" class="signupForm">
 		<input type="text" name="reg_fname" placeholder="First Name" value="<?php 
@@ -88,7 +88,7 @@ require 'includes/form_handlers/login_handler.php';
 		<?php if(in_array("<span style='color: #14C800;'>You're all set! Goahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>"; ?>
 		<a href="#" id="signin" class="signin">Already have an account? Sign in here!</a>
 	</form>
-</div>
+</div> -->
 
 </body>
 </html>

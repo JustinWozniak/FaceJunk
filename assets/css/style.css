@@ -80,7 +80,6 @@ a {
 }
 
 
-
 .logo a {
     font-family: 'Bellota-BoldItalic', sans-serif;
     margin-left: 10px;
@@ -136,7 +135,7 @@ a:hover {
     float: left;
     margin-bottom: 20px;
     border: 3px solid rgb(0, 0, 0);
-    height:250px;
+    height: 250px;
 }
 
 
@@ -152,9 +151,9 @@ a:hover {
         height: 280px;
         border-radius: 5px;
         margin-right: 10px;
-        padding-right: 40px;
-        padding-left: 15px;
-        width: 260px;
+        padding-right: 21px;
+        padding-left: -2px;
+        width: 314px;
         margin-top: 20px;
     }
 }
@@ -375,8 +374,8 @@ hr {
 
 @media screen and (max-width: 376px) {
     .like_value {
-      display: block;
-      margin-left: 40px;
+        display: block;
+        margin-left: 40px;
     }
 }
 
@@ -402,7 +401,7 @@ hr {
         margin-top: 20px;
         color: #CBEAF8;
         margin-left: 70px;
-        padding-top:10px;
+        padding-top: 10px;
     }
 }
 
@@ -522,11 +521,11 @@ hr {
 @media screen and (max-width: 376px) {
     #message_textarea {
         width: 80%;
-margin-right: 2px;
-border-radius: 5px;
-border: 1px solid #D3D3D3;
-font-size: 18px;
-margin-left: -50px;
+        margin-right: 2px;
+        border-radius: 5px;
+        border: 1px solid #D3D3D3;
+        font-size: 18px;
+        margin-left: -50px;
 
     }
 }
@@ -581,10 +580,17 @@ margin-left: -50px;
         margin-bottom: 20px;
     }
 }
-
+.messagebutton  {
+    background-color: red;
+}
 .user_found_messages {
     border-bottom: 1px solid #D3D3D3;
     padding: 8px 8px 10px;
+}
+@media screen and (max-width: 376px) {
+    .user_found_messages {
+        padding: 0px;
+    }
 }
 
 .user_found_messages:hover {
@@ -595,24 +601,38 @@ h4 {
     text-align: center;
 }
 .user_found_messages img {
-    height: 35px;
+    height: 50px;
     float: left;
+    width: 69px;
 }
 
 @media screen and (max-width: 376px) {
     .user_found_messages img {
-        /* width: 100px;
-        height: 50px; */
+        width: 41px;
+        height: 28px;
         border-radius: 5px;
         margin-left: 10px;
     }
 }
+.user_found_messages2 img {
+    height: 50px;
+    float: left;
+    width: 100px;
+}
 
+@media screen and (max-width: 376px) {
+    .user_found_messages2 img {
+        width: 92px;
+        height: 49px;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+}
 #grey {
     padding-left: 40px;
     text-align: center;
     color: #8C8C8C;
-    margin-top: 10px;;
+    margin-top: 10px;
 }
 
 
@@ -706,10 +726,8 @@ h4 {
 .search {
     padding-top: 90px;
     padding-left: 120px;
-
+    cursor: pointer;
 }
-
-
 
 
 #search_text_input {
@@ -727,9 +745,9 @@ h4 {
 
 @media screen and (max-width: 376px) {
     #search_text_input {
-     
- 
-       visibility: visible;
+
+
+        visibility: visible;
     }
 }
 .searchicon {
@@ -825,11 +843,9 @@ h4 {
 
 .postedImage img {
     max-height: 300px;
-max-width: 100%;
+    max-width: 100%;
 
-margin: 5px auto;
-    margin-top: 5px;
-margin-top: 20px;
+    margin: 20px auto 5px;
 }
 
 
@@ -896,28 +912,44 @@ iframe[seamless] {
 
 @media screen and (max-width: 376px) {
     #message_submit {
-        width: 25%;
+        width: 80px;
+        height: 40px;
+        padding-left: 10px;
 
     }
 }
-    #post_body iframe {
-		 margin-top:10px;
-		 margin-left:15px;
-		width:100%
-	}
+#post_body iframe {
+margin-top: 10px;
+margin-left: 15px;
+width: 100%
+}
 
 @media screen and (max-width: 376px) {
-    #post_body iframe {
-        margin-top: 20px;
-        width: 275px;
-        height: 180px;
-        padding-left: 0px;
-    }
+#post_body iframe {
+    margin-top: 20px;
+    width: 275px;
+    height: 180px;
+    padding-left: 0;
+}
 }
 @media screen and (max-width: 376px) {
-    #post_body {
-        margin-top: 10px;
-  
-    
-    }
+#post_body {
+    margin-top: 10px;
+
+
+}
+}
+@media screen and (max-width: 376px) {
+.CroppingContainer {
+    width: 550px;
+    background-color: #FFF;
+    margin-left: -60px;
+    position: relative;
+    overflow: hidden;
+    border: 2px #666 solid;
+    z-index: 2001;
+    padding-bottom: 0;
+
+
+}
 }

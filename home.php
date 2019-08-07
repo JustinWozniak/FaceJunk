@@ -37,7 +37,7 @@ include("./includes/header.php");
      <img class="profile img-responsive" src="assets/images/logos/me.jpg" alt="FUCKYEAH">
     </div>
     <div class="col-sm-4 col-p">
-     <p>Welcome to StarfüKkers.A place where your free to post WHATEVER YOU LIKE!<br/></p>
+     <p>Welcome to StarfüKkers.<br>A place where your free to post WHATEVER YOU LIKE!<br/></p>
   </p><hr class="hr" />
     </div>
    </div>

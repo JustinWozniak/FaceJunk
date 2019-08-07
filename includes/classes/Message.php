@@ -156,7 +156,7 @@ class Message {
 			$split = str_split($latest_message_details[1], 12);
 			$split = $split[0] . $dots; 
 
-			$return_string .= "<a href='messages.php?u=$username'> <div class='user_found_messages'>
+			$return_string .= "<a href='messages.php?u=$username'> <div class='user_found_messages2'>
 								<img src='" . $user_found_obj->getProfilePic() . "' style='border-radius: 5px; margin-right: 5px; class='miniProfilePic'>
 								" . $user_found_obj->getFirstAndLastName() . "
 								<span class='timestamp_smaller' id='grey'> " . $latest_message_details[2] . "</span>

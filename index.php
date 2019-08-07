@@ -81,14 +81,14 @@ if(isset($_POST['post'])){
 
 		<div class="posts_area"></div>
 		<!-- <button id="load_more">Load More Posts</button> -->
-		<img id="loading" src="assets/images/icons/loading.gif">
+		<img id="loading" src="assets/images/icons/pizzaload.gif">
 
 
 	</div>
 
 	<div class="user_details column">
 
-		<h4>Popular</h4>
+		<h4>Trending</h4>
 
 		<div class="trends">
 			<?php 

@@ -92,7 +92,7 @@ if(isset($_POST['post_message'])) {
 
       ?>
     </form>
-    <input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something">
+    <!-- <input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something"> -->
 
     <?php
     if ($userLoggedIn != $username) {
@@ -163,7 +163,7 @@ if(isset($_POST['post_message'])) {
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="postModalLabel">Post something!</h4>
+         <h4 class="modal-title" id="postModalLabel">Post something!</h4>
       </div>
 
       <div class="modal-body">

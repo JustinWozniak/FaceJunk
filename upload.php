@@ -151,6 +151,9 @@ if (isset($_POST['x'])){
 														
 }// post x
 ?>
+<head>
+<link rel=" stylesheet" type="text/css" href="./assets/css/style.css"">
+</head>
 <div id="Overlay" style=" width:100%; height:100%; border:0px #990000 solid; position:absolute; top:0px; left:0px; z-index:2000; display:none;"></div>
 <div class="main_column column">
 
