@@ -29,10 +29,11 @@ require 'includes/form_handlers/login_handler.php';
 		<?php if(in_array("Email or password was incorrect<br>", $error_array)) echo  "Email or password was incorrect<br>"; ?>
 		<input type="submit" name="login_button" value="Login">
 		<br>
-		<h3 class="signup">Registrations are closed, try again next year</h3>
+		<h3 class="signup">Sign ups are closed.<br>Try again next year</h3>
 		<!-- <a href="#" id="signup" class="signup">Need an account? Register here!</a> -->
 	</form>
-<!-- </div>
+<!-- 	
+</div>
 <div id="second">
 	<form action="register.php" method="POST" class="signupForm">
 		<input type="text" name="reg_fname" placeholder="First Name" value="<?php 

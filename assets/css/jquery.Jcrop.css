@@ -23,6 +23,7 @@
   height: 100%;
   width: 1px !important;
 }
+
 .jcrop-vline.right {
   right: 0;
 }
@@ -44,6 +45,7 @@
   /* disable cut copy paste */
   -webkit-user-select: none;
 }
+
 /* Selection Handles */
 .jcrop-handle {
   background-color: #333333;

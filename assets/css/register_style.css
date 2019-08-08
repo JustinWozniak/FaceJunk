@@ -134,6 +134,9 @@ input[type=text], select, textarea {
       float: left;
       width: 85%;
     }
+    .signup {
+      width:100%;
+    }
     .signupForm {
       display: block;
       float: left;
@@ -144,3 +147,4 @@ input[type=text], select, textarea {
     }
    
   }
+
