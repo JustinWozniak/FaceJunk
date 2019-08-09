@@ -53,15 +53,17 @@ We only belive in one rule here:<br><br>
 Feel free to post a giant dick if ya like, tits and ass are welcome as well LMAO! But nothing traumatizing<br>
 IT WILL NOT BE TOLERATED!!!</h4>
 <h1 class="text-centerMain">Feel free to use a phoney name!</h1><br>
-<h4>I actually think everybody should use a phoney name!!! Lets make this fun!!!
-I do have access to the database of accounts tho...again...idiots will be banned....<br><br>
-Im really hoping I dont have to turn into "Facebook Police".<br><br><br>
+<h4>I actually think everybody should use a phoney name!!! Lets make this fun!!!<br><br>
 That being said, when your added, your only freind will be me...."Dr Gonzo"
 When you first sign in you will also be given one of twenty-five random profile pictures. Feel free to change this as well.<br>
 You should also change the password I gave you....all of the above can be done on the setting page!<br><br>
 This entire project is going to be on-going...Im always up for ideas, and possibly somebody to help with all of this.<br>
+Currently we are only able to post: Text, Images and Youtube links. More to come soon!<br>
 Big plans are in the works, Im thinking an art corner, music sharing/concert corner, weekly articles and more! ALL IN GOOT TIME!!!<br>
-Im still new to programming, so you may from time to time find some funky stuff going on. Feel free to contact me if you find bugs, typos or random gibberish that makes no sence!!!<br><br>
+Im probably going to stay away from actual profiles, because they are lame. Nobody cares where you live, when you were born or where you went on vacation! LMAO<br>
+Use facebook for that junk!<br><br>
+Im still new to programming, so you may from time to time find some funky stuff going on. Feel free to contact me if you find bugs, typos or random gibberish that makes no sence!!!<br>
+You guys are my first testers!!!<br><br>
 The messenger system should work fine, different then say facebook....your allowed to message anybody at anytime. Weather your friends or not.<br>
 Being a friend just makes it so you can see their posts.<br><br>
 Feel free to also check out the bathroom wall...Its a place you can post anonymously!<br>
@@ -106,3 +108,5 @@ Play around with it and Im sure you'll figure it out tho....</h4>
   
 </body>
 </html>
+
+

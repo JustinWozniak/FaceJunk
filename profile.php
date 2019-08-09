@@ -109,19 +109,19 @@ if(isset($_POST['post_message'])) {
 	<div class="profile_main_column column">
 
     <ul class="nav nav-tabs" role="tablist" id="profileTabs">
-      <li role="presentation" class="active"><a href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab" class='tabClass'>Newsfeed</a></li>
-      <li role="presentation"><a href="#messages_div" aria-controls="messages_div" role="tab" data-toggle="tab">Messages</a></li>
+      <!-- <li role="presentation" class="active"><a href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab" class='tabClass'>Newsfeed</a></li> -->
+      <li role="presentation" class="active"><a href="#messages_div" aria-controls="messages_div" role="tab" data-toggle="tab">Messages</a></li>
     </ul>
 
     <div class="tab-content">
-
+<!-- 
       <div role="tabpanel" class="tab-pane active" id="newsfeed_div">
         <div class="posts_area"></div>
         <img id="loading" src="assets/images/icons/pizzaload.gif">
-      </div>
+      </div> -->
 
 
-      <div role="tabpanel" class="tab-pane" id="messages_div">
+      <div role="tabpanel" class="tab-pane active" id="messages_div">
         <?php  
         
 

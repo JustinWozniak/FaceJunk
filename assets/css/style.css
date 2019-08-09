@@ -706,6 +706,11 @@ h4 {
     top: 120px;
     overflow: scroll;
 }
+@media screen and (max-width: 376px) {
+.dropdown_data_window {
+    margin-top: 33px;
+}
+    }
 
 .notification_badge {
     padding: 3px 7px;
