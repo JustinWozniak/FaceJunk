@@ -132,6 +132,11 @@ a:hover {
     z-index: -1;
 }
 
+#loading    {
+    width:25px;
+    height: 25px;
+}
+
 .user_details {
     width: 220px;
     float: left;
@@ -767,7 +772,7 @@ h4 {
 #search_text_input {
     border: 2px solid red;
     float: left;
-    height: 30px;
+    height: 39px;
     width: 63px;
     padding: 5px;
     border-top-right-radius: 0;

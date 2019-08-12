@@ -49,8 +49,6 @@ if(isset($_POST['post'])){
 
 
  ?>
- <body class="mainview">
-  <script src="./assets/js/wallpaper.js"></script>
 	<div class="user_details column">
 		<a href="<?php echo $userLoggedIn; ?>">  <img src="<?php echo $user['profile_pic']; ?>"> </a>
 
@@ -88,11 +86,11 @@ if(isset($_POST['post'])){
 
 	<div class="user_details column">
 
-		<h4>Trending</h4>
+		<h4>Popular</h4>
 
 		<div class="trends">
 			<?php 
-			$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 5");
+			$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
 
 			foreach ($query as $row) {
 				
@@ -114,7 +112,7 @@ if(isset($_POST['post'])){
 
 
 	</div>
-		</body>
+
 
 
 
@@ -138,39 +136,39 @@ if(isset($_POST['post'])){
 			}
 		});
 
-		$(window).scroll(function() {
-		//$('#load_more').on("click", function() {
+		// $(window).scroll(function() {
+		// //$('#load_more').on("click", function() {
 
-			var height = $('.posts_area').height(); //Div containing posts
-			var scroll_top = $(this).scrollTop();
-			var page = $('.posts_area').find('.nextPage').val();
-			var noMorePosts = $('.posts_area').find('.noMorePosts').val();
+		// 	var height = $('.posts_area').height(); //Div containing posts
+		// 	var scroll_top = $(this).scrollTop();
+		// 	var page = $('.posts_area').find('.nextPage').val();
+		// 	var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
-			if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
-			//if (noMorePosts == 'false') {
-				$('#loading').show();
+		// 	if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
+		// 	//if (noMorePosts == 'false') {
+		// 		$('#loading').show();
 
-				var ajaxReq = $.ajax({
-					url: "includes/handlers/ajax_load_posts.php",
-					type: "POST",
-					data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
-					cache:false,
+		// 		var ajaxReq = $.ajax({
+		// 			url: "includes/handlers/ajax_load_posts.php",
+		// 			type: "POST",
+		// 			data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
+		// 			cache:false,
 
-					success: function(response) {
-						$('.posts_area').find('.nextPage').remove(); //Removes current .nextpage 
-						$('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage 
-						$('.posts_area').find('.noMorePostsText').remove(); //Removes current .nextpage 
+		// 			success: function(response) {
+		// 				$('.posts_area').find('.nextPage').remove(); //Removes current .nextpage 
+		// 				$('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage 
+		// 				$('.posts_area').find('.noMorePostsText').remove(); //Removes current .nextpage 
 
-						$('#loading').hide();
-						$('.posts_area').append(response);
-					}
-				});
+		// 				$('#loading').hide();
+		// 				$('.posts_area').append(response);
+		// 			}
+		// 		});
 
-			} //End if 
+		// 	} //End if 
 
-			return false;
+		// 	return false;
 
-		}); //End (window).scroll(function())
+		// }); //End (window).scroll(function())
 
 
 	});

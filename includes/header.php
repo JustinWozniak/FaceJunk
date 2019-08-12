@@ -36,6 +36,7 @@ if (isset($_SESSION['username'])) {
   <script src="assets/js/gonzo.js"></script>
   <script src="assets/js/jcrop_bits.js"></script>
   <script src="assets/js/jquery.jcrop.js"></script>
+  <script src="assets/js/infinitScroll.js"></script>
 
 
   <!-- css things -->
