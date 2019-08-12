@@ -137,7 +137,7 @@ a:hover {
     float: left;
     margin-bottom: 20px;
     border: 3px solid rgb(0, 0, 0);
-    height: 250px;
+    height: 335px;
 }
 
 
@@ -342,8 +342,8 @@ hr {
 
 .newsfeedPostOptions iframe {
     border: 0;
-    height: 50px;
-    width: 120px;
+    height: 47px;
+    width: 140px;
     background-color: #000000;
 }
 
@@ -619,7 +619,7 @@ h4 {
 .user_found_messages2 img {
     height: 50px;
     float: left;
-    width: 100px;
+    width: 62px;
 }
 
 @media screen and (max-width: 376px) {
@@ -1005,6 +1005,7 @@ width: 100%
     border:2px #666 solid; 
     z-index:2001; 
     padding-bottom:0px;
+}
 /* }
 @media screen and (max-width: 376px) {
 .CroppingContainer {

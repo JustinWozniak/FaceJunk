@@ -64,7 +64,7 @@ Im probably going to stay away from actual profiles, because they are lame. Nobo
 Use facebook for that junk!<br><br>
 Im still new to programming, so you may from time to time find some funky stuff going on. Feel free to contact me if you find bugs, typos or random gibberish that makes no sence!!!<br>
 You guys are my first testers!!!<br><br>
-The messenger system should work fine, different then say facebook....your allowed to message anybody at anytime. Weather your friends or not.<br>
+The messenger system should work fine, different then say facebook....your allowed to message anybody at anytime. Whether your friends or not.<br>
 Being a friend just makes it so you can see their posts.<br><br>
 Feel free to also check out the bathroom wall...Its a place you can post anonymously!<br>
 Sit back and read the nonesence others have left.<br></h4>
@@ -76,7 +76,7 @@ StarfüKkers is invite only for now...Send me an email with their name and email
 <h4>This means, I am not responsible for your data bill costing you 10,000$ for one month, because your burnt 40 gigs posting dumb memes on here!!!!!!<br><br>
 If ya havent noticed, the background and logo change often as well...<br>
 For your own safety, USE WIFI GODDAMIT!!!!<br><br>
-BY READING THIS YOU AGREE TO NOT SUE STAR STAR MEDIA, OR COMPLAIN ABOUT THE GOVERMENT <br>
+BY READING THIS YOU AGREE TO NOT SUE JUSTIN WOZNIAK, OR COMPLAIN ABOUT THE GOVERMENT <br>
 OR POST PICTURES OF WHAT YOU ATE FOR SUPPER LASTNIGHT!!!!!<br><br></h4>
 <h1 class="text-centerMain">WE DO NOT CARE!!!!</h1><br>
 <h4>Below is what each icon means on the main page.....</h4>
@@ -102,7 +102,7 @@ Play around with it and Im sure you'll figure it out tho....</h4>
 </div>
 </section>
 <footer class="footer">
-  <p class="text-center">Star Star 2019<br></p>
+  <p class="text-center">JUSTINMOTHERFUKKINWOZNIAK2019<br></p>
     </footer>
 </html>
   

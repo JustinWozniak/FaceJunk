@@ -28,7 +28,7 @@ include("includes/form_handlers/settings_handler.php");
 		First Name: <input type="text" name="first_name" value="<?php echo $first_name; ?>"><br>
 		Last Name: <input type="text" name="last_name" value="<?php echo $last_name; ?>"><br>
 		Email: <input type="text" name="email" value="<?php echo $email; ?>"><br>
-
+		<br><br>
 		<?php echo $message; ?>
 
 		<input type="submit" name="update_details" id="save_details" value="Update Details"><br>
@@ -41,7 +41,9 @@ include("includes/form_handlers/settings_handler.php");
 		New Password Again: <input type="password" name="new_password_2"><br>
 		<input type="submit" name="update_password" id="save_details" value="Update Password"><br>
 	</form>
-
+	<br><br>
+	<?php echo $password_message; ?>
+<br><br>
 <h4>Close Account</h4>
 <form action="close_account.php">
     <input type="submit" value="CLOSE ACCOUNT" />
