@@ -610,7 +610,7 @@ h4 {
 .user_found_messages img {
     height: 50px;
     float: left;
-    width: 69px;
+   width: 54px;
 }
 
 @media screen and (max-width: 376px) {
